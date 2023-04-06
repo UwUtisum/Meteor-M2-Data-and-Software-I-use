@@ -1,0 +1,8 @@
+You can process .s file who are comming from the Meteor Demodulator plugin in SDRsharp, but with some limitations:
+
+	-You can only treat recent file as you need valid tle for the date of the pass. Could be impossible to achieve for long time passes.
+		If the tle are not valid, M2_LRPT_Decoder will not create the .gcp file or crash.
+		
+	-If your country have daylight saving time, the georeferencement will be bad if the pass was not in the same daylight saving time as now.
+	
+	-If you want to re-extract already extracted .s file, please delete first the already generated .gcp file.

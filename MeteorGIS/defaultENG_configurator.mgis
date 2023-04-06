@@ -1,0 +1,347 @@
+;programVersion=2.24
+;MeteorGIS is a free program for extracting images from the ones decoded by the M2_LRPT_Decoder and create projected ones with the ability to add shapes on them.
+;It is written in C# and use the Framework 4.5.
+;version 2.20 (c) May 2016 - October 2019 by Christophe MARCHAND "ZeTof" - http://www.zetofzone.com/. You can contact me at zetofzone@gmail.com but I don't have much time....
+;This program uses a free library for parsing shape files : Easy GIS .NET Desktop Edition from http://www.easygisdotnet.com/Products.aspx under LGPL license.
+;Carefully read my explanations in this file to understand how it works. I've tried to be clear.
+;You need a file "SGP4.dll" in the M2_LRPT_Decoder folder in order or geo-referencing to proceed.
+;
+;From v2.00 : Thanks a lot to "Graham Hu" from the Facebook "APT Group" who sent me a updated version (English and explanations) of this file!
+;
+;For automatic mode (default), put this line with the correct path to this program in the "Tracking DDE Client plugin" of SDR#. It must replace your actual line to launch M2_LRPT_Decoder.
+;start_programm_Path<C:\Meteor\MeteorGIS\MeteorGIS.exe>
+;
+;Known bugs :
+;	-Some imperfections in the composition of images where the images are superposed. (I applied a soft transition between images and couldn't find what's wrong...!)
+;	-If you are at high latitudes (+/-) You could have some imperfections in the far North (or South) part of the image in LatLon projection.
+;
+;As I couldn't try it for Southern hemisphere nor Western Longitude, please report any bug in my mail with the .jpg & the .jpg.gcp files from M2_LRPT-Decoder.
+;
+;From version 1.05 you have the possibility to have one ini file for each type of pass for setting the shapes.
+;Their names must be (case sensitive) : IR.ini, RGB.ini, thermal.ini, RGBrainfall.ini & IRrainfall.ini. If they are not found, this one is used.
+;
+;In addition to this ini file, there are some command lines options :
+;If you use it in automatic mode with SDRSharp & the plugin Meteor Demodulator, you normally don't have to specify any option.
+;"/nolive"	By default MeteorGIS works in automatic mode. It can launch the decoder (M2_LRPT_Decoder.exe) after creating the right ini file for it.
+;				If you specify this option, you have to make it by yourself, for treating some old images.
+;				If you didn't use this automatic mode take care to not specify an input file (but folder instead)
+;"/notle"	If you specify this option, the program will not try to download lastest avaible TLE. (Don't use unless you want to treat old .s file.)
+;"/input:"	Specify an input file for treatment. Could be a folder, in this case it will search for the last file in this folder AND subfolders. Override the option below in the "Program" section.
+;				File specified could be a jpg, a bmp (in this case give one of the 3 channels bmp name) or a .s file (Read the "About_.s.txt"). Jpg images are NOT post-treated (see "Treatment" section below).
+;				Of course, you must have the .gcp file in relation with it (apart for .s file - it will be generated).
+;"/outdir:"	Specify the output folder for treated files. If not exist, will be created. Overrides the option below in the "Program" section.
+;				Take care if you put the folder embraced in quotes ("), for example if the path contains a space, to NOT PUT a \ at the end !!!
+;"/type:"	The type(s) of image(s) generated. Overrides the option below in the "Program" section.
+;"/proj:"	The type of the projection (UTM or LatLon). Overrides the option below in the "Program" section.
+;"/config:"	Specify an other ini file if you want to keep different configurations. File must be in this program folder.
+;"/compose:"	Specify one or more image(s) to be composed with the input one. Must be the entire path to the image(s).
+;				If you specify more than one file separate them by a comma. (There is a maximum of 3 passes of Meteor in the same point, and this 2 times a day. So you normally don't have to put more than 2 files here).
+;"/composeauto"	The program will create all image(s) specified or found in the input folder (only if the file doesn't yet exist) plus a composition of all passes within +/- X hours (see the option "timespanComposition" in the "Program" section) of the one specified as input (or last one if a folder is specified).
+;				This option is used only if you use the /nolive option (manual mode). In case of live reception, this option is always set.
+;"/sat:"		Specify the sat name (M2 or M2.2) for treating .s file manually if the pass is not in the passLit.txt file.
+;				This is needed to choose the correct TLE file.
+;
+;Notes :
+;	This program asks M2_LRPT_Decoder to save files as BMP (one for each channel). So in time this is space consumming...
+;	Colors use the HTML format. You can find colors at http://www.colorpicker.com/
+;	You can find free shapes at http://www.naturalearthdata.com/downloads/ The ones given with this program came from here. (You need 3 files for each shape : the .shp, .dbf & .shx)
+__________________________________________________________________________________________________________________________________________________________________________________
+;Here are the program general options
+[Program]
+;	Default input directory. Could be overridden by the command line option "/input:".
+;	You can specify a file with the command line option. If no file specified, the last created in this directory will be used.
+;	Note : It will search the last(s) file(s) in this directory AND all it's subfolders.
+;	Take care for automatic mode (live) that it should be the same or parent of the folder "pathToSaveDecodedImages" specified in the "M2_LRPT_Decoder" section.
+;	Must finish by a \
+	inputDir=~C:\Meteor\images\
+;	Default output directory. Could be overridden by the command line option "/outdir:".
+;	If empty, input directory will be used. It will be the one where it finds the input file (as it searchs subfolders).
+;	If specified must finish by a \
+	outputDir=~
+;	Which type of projection would you like ?
+;	PLEASE NOTE : For LatLon projection (Mercator) It's not possible to project at more than +/-85° of latitude as the width of the image tends towards infinity at the poles.
+;	Could be overridden by the command line option "/proj:".
+	projection=|UTM/Mercator|UTM
+;	By default, which kind of images would you like to process ? Could be overridden by the command line option "/type:".
+	defaultImageTypes=$rgb,ir,thermal,ir_rain,rgb_rain$rgb,ir,thermal,ir_rain,rgb_rain
+;	Timespan for creating compositions :
+	timespanComposition=£1/72£6
+;	Do you want to keep TLE from the passes for later .s file decoding ?
+;	The files will be saved with the name of the pass (2019-11-21-16-15-6-816_64_M2.2_tle.txt for example) as this you can easily find the right one.
+;	To use you have to rename the right file in M2_tle.txt or M2.2_tle.txt.
+;	Of course will only works if you use MeteorGIS :)
+;	Will be save in the M2_LRPT_Decoder folder.
+	saveTle=!no
+;	Do you want to generate thumbnail images ?
+	generateThumbnail=!yes
+;	If yes, how wide in pixels ?
+	thumbnailSize=£100/500£300
+;	Folder to put thumbnails in ?
+;	If empty it will use the same as the final image. (Note : It must exist, otherwise it will use the same as the final image)
+	thumbnailDir=~
+;	Would you like the final image in jpg or bmp ? Bmp could create images more than 100Mb in composition !
+;	Note : if you use a jpg file as input, this will always use jpg as output.
+	saveType=|jpg/bmp|jpg
+;	If jpg above, jpg save quality for the final image : (0=>100) Larger the number, the larger the file size!
+	jpgQuality=£20/100£50
+;	Would you like to save compositions also with the generic name "LASTCOMPO_RGB.jpg" (for RGB & jpg) :
+	saveGenericCompo=!no
+;	Minimum height of the received image to be treated (in pixels). If the received image is less than this number, will skip this image.
+	minimumHeight=£0/1000£1000
+;	What palette file to use for the thermal image. Image must be 255 pixels wide and at least 20 pixels high. Coldest to the left.
+	thermalCLUT=CLUT.png
+;	What palette file to use for the rain image. Image must be 255 pixels wide and at least 20 pixels high. Heaviest rainfall to the left.
+	rainCLUT=RAIN.png
+;	Would you like to add a watermark on the final image(s) ?
+	watermark=!yes
+;	If yes, where to put it ?
+	watermarkPlace=|bottom_centered/top_centered/bottom_left/bottom_right/top_left/top_right|top_centered
+;	Font of the watermark :
+	watermarkFont=LemonMilk.otf
+;	Color of the watermark :
+	watermarkColor=§AD880C
+;	Size of the watermark :
+	watermarkSize=£1/500£100
+;	Watermark text could be placed here or placed in an external file (as this it could be generated from a batch program for example).
+;	From a file ?
+	watermarkFromFile=!no
+;	Put here either the text or the file name :
+;	If you put the text here, there are several options (This works in a file too) :
+;		\r\n			new line.
+;		%dtl%			date & time your local time.
+;		%dtu%			date & time UTC.
+;		%type%			type of the pass(RGB,IR,...).
+;	From v2.01 :
+;		%proj%			type of the projection(UTM, Mercator).
+;		%version%		Program version.
+;		%apid%			APID channels of the pass enclosed in brackets.
+;	From v2.20 :
+;		%sat%			name of the sat. If it could not be retreived (manual mode) will put 'Meteor M'.
+;	From v2.24 :
+;		%textCompo%		Will add a text in compositions only. see the next option below.
+	watermarkFileOrText=ZeTof Projection : %proj%\r\n%sat% %type% %textCompo%\r\n%dtu% UTC\r\nAPID : %apid%\r\nMeteorGIS v.%version%
+;	From v2.24 :
+;		%hours%			In composition will add the number of hours you used to made it.
+;		%nbImg%			In composition will add the number of images used to made it.
+;			Works like this : Add first the %hours% in a sentence. And this text will be drawn only on composition images. The options %xxx% above doesn't works here.
+	textCompo=Composition of %nbImg% images within the last %hours% h
+;	Would you like to draw a cross at your location ?
+	drawLocation=!yes
+;	If yes, where ? : (S is negative)
+	locationLatitude=33.2
+;	If yes, where ? : (W is negative)
+	locationLongitude=130.4
+;	Color of the cross :
+	locationColor=§CC3030
+;	Size of the cross :
+	locationSize=£1/500£30
+;	Thickness of the cross :
+	locationThickness=£1/20£6
+;	Would you like to add a temperature scale for the thermal images ?
+	thermalScale=!yes
+;	If yes, from which file ?
+	thermalFile=therm_pal.jpg
+;	Where to put it ?
+;	right_centered and left_centered are for a vertical image.
+	thermalPlace=|bottom_centered/top_centered/bottom_left/bottom_right/top_left/top_right/right_centered/left_centered|bottom_centered
+;	Enable Logs ? (Not really interesting, but could help to find problems). If yes, remember to delete them sometimes....
+	logs=!yes
+;Here are the M2_LRPT-Decoder options
+[M2_LRPT_Decoder]
+;	Path to M2_LRPT_Decoder.exe :
+;	Must finish by a \
+	pathToM2_LRPT_Decoder=~C:\Meteor\
+;	Where to find the latest TLE for Meteor M2/M2-2 :
+;	From v2.20 you should put here both the sat TLE as the program choose the right one from the sat name send by the demodulator plugin in TCP.
+;	The one given as default is from my friend Thibaut "Fouine". Thanks to him..
+;	
+;	For Meteor M2
+;	http://tle.radiofouine.net/Meteor-M2.php
+	tleURLM2=http://tle.radiofouine.net/Meteor-M2.php
+;	For Meteor M2-2
+;	http://tle.radiofouine.net/Meteor-M2_2.php
+	tleURLM22=http://tle.radiofouine.net/Meteor-M2_2.php
+;	LRPT logs option.
+	LRPTlog=!no
+;	mode option. Could be auto
+	mode=|auto/72k/80k|auto
+;	APID70 option.
+	APID70=!yes
+;	VCDU option.
+	VCDU=!yes
+;	Path to folder to save M2 extracted images. Should be the same as "inputDir" of the "Program" option, or one of its subfolder.
+;	Must finish by a \
+	pathToSaveDecodedImages=~C:\Meteor\images\M2\
+;	Path to folder to save M2.2 extracted images. Should be the same as "inputDir" of the "Program" option, or one of its subfolder.
+;	Must finish by a \
+	pathToSaveDecodedImagesM22=~C:\Meteor\images\M22\
+;	Would you like to create subFolders in the above directory with the year and the month.
+;	Means it will create a subfolder with the year, and another one with the month inside the year one.
+	createDateIndexedFolder=!yes
+;	Path to Amigo SharedFolder : (I don't know if this is needed...)
+;	Must finish by a \
+	pathToAmigoSharedFolder=~C:\Meteor\AMIGO\ShareFolder\
+;	Your Amigo ID :
+;	If you leave it blank, it will try to retrieve the last used.
+	AmigoID=
+;	Options for the GEO part of M2_LRPT_Decoder.ini
+;	Alfa - camera angle
+;	Delta - offset along the line
+;	Selecting Delta, achieve alignment of the coastline in the center of the image. 
+;	Then changing Alfa, you can expand / contract images on a line.
+;	When choosing Delta, be aware that a change of 1 will result in a shift of about 1 km for misplaced overlay correction.
+	Alfa_M2=110.8
+;	Options for the GEO part of M2_LRPT_Decoder.ini
+;	Alfa - camera angle
+;	Delta - offset along the line
+;	Selecting Delta, achieve alignment of the coastline in the center of the image. 
+;	Then changing Alfa, you can expand / contract images on a line.
+;	When choosing Delta, be aware that a change of 1 will result in a shift of about 1 km for misplaced overlay correction.
+	Delta_M2=32
+;	Options for the GEO part of M2_LRPT_Decoder.ini
+;	Alfa - camera angle
+;	Delta - offset along the line
+;	Selecting Delta, achieve alignment of the coastline in the center of the image. 
+;	Then changing Alfa, you can expand / contract images on a line.
+;	When choosing Delta, be aware that a change of 1 will result in a shift of about 1 km for misplaced overlay correction.
+	Alfa_M22=110.0
+;	Options for the GEO part of M2_LRPT_Decoder.ini
+;	Alfa - camera angle
+;	Delta - offset along the line
+;	Selecting Delta, achieve alignment of the coastline in the center of the image. 
+;	Then changing Alfa, you can expand / contract images on a line.
+;	When choosing Delta, be aware that a change of 1 will result in a shift of about 1 km for misplaced overlay correction.
+	Delta_M22=-4.8
+;	Tricky : Would you like to use the UTC time or the Meteor M2 onboard clock (UTC+3) for generating the dateStamp in the M2_LRPT_Processor.ini file ?
+;	Nobody knows (apart the developer of the M2_LRPT_Processor program) and you must do tests !!
+;	I suggest you use "yes". But if you find a pass where UTC time is near 0h00 and the georeferencing of the image is bad, switch this option !
+;	Could be overriden by the option in the Tracking DDE client in SDR# : M2_decoder_init_Line<RoughStartTimeUTC=now>...or not !!
+	useMeteorTimeM2=!yes
+	useMeteorTimeM22=!no
+;
+;
+;Here are the image treatment options :
+;NOTE : THERE WILL BE NO TREATMENT AT ALL IF YOU USE A jpg FILE AS INPUT FILE !! USE bmp FILES IF YOU WANT TREATMENT !!
+[Treatment]
+;	Treatment of the color lines : maximum height of the iteration to fill the inexistant lines : (one line represent 8px in height). THIS IS TIME CONSUMING !
+;	For filling color hole, I take the nearest value of the inexistant color, and by comparison with other colors, I retrieve the missed color as best I can.
+;	Further we go, less is the reliability is the calculation.
+;	As the algorithm is pretty good, this is always applied. If you really don't want it, put 0.
+	maxIterationColorLines=£0/10£5
+;	Would you like to fill black lines in the image ? This is a little tricky and in some case could provoke strange results.
+	fillBlackLines=!yes
+;	If yes : maximum height of the hole to will be filled : (one black line represent 8px in height)
+	maxFillBlackLines=£1/50£15
+;	Would you like to sharpen images ?
+	sharpen=!yes
+;	Would you like to try to recover the red colors on 125 passes ?
+;	This could give strange results in some cases....
+	rectifyRedColorOn125=!yes
+;	Would you like to save treated images (in jpg) for further treatment if you want to use some other program(s) (like LRPT_Image_Processor) ?
+	saveTreated=!no
+;
+;
+;Here are the shapes options :
+;Note : they will be drawn in the order you put them here.
+;IMPORTANT : you need 3 files for each shape : the .shp, the .dbf and the .shx.
+;For the options which are field from the .dbx, only the first part before the comma is used. You can put the entire name or only the first part.
+[Shapes]
+;	Number of shapes which will be added :
+	shapesNumber=£0/5£5
+;
+;For each shapes, there are it's own options. Must be "Shape" plus it's number. We begin by "[Shape0]" and so on... :
+;The options inside are not the same for LINES shape files and POINTS shape files.
+[Shape0]
+;	Filename of the shape file : (here this is a LINES shape file - the coastlines)
+	filename=~ne_50m_coastline.shp
+;	Color in HTML format :
+	color=§5A690F
+;	Thickness in pixels :
+	thickness=£1/20£3
+[Shape1]
+;	Filename of the shape file : (here this is a LINES shape file - the boundaries)
+	filename=~ne_50m_admin_0_boundary_lines_land.shp
+;	Color in HTML format :
+	color=§AB6503
+;	Thickness in pixels :
+	thickness=£1/20£3
+[Shape2]
+;	Filename of the shape file : (here this is a LINES shape file - the coordinate lines)
+	filename=~ne_110m_graticules_10.shp
+;	Color in HTML format :
+	color=§888888
+;	Thickness in pixels :
+	thickness=£1/20£3
+[Shape3]
+;	Filename of the shape file : (here this is a POINTS shape file - the population)
+	filename=~ne_50m_populated_places.shp
+;	Specify if you want a circle or a triangle :
+	form=|circle/triangle|circle
+;	Names of the fields for the Latitude (find it in the dbf file) :
+	latitudeField=LATITUDE,N,19,11
+;	Names of the fields for the Longitude (find it in the dbf file) :
+	longitudeField=LONGITUDE,N,19,11
+;	Specify the field which will be used for ruptures :
+;	You can find this field in the dbf file.
+	rupturesField=POP_MAX,N,9,0
+;	Ruptures (separate them by a comma) :
+;	In this example, these are the cities. We take them only if there are more than 1 000 000 people, and apply differents colors.
+	ruptures=1000000,5000000,10000000
+;	Colors in HTML format. Separate them by a comma. There must be the same number of values as above for the ruptures :
+	colors=§6C8FE0,486EC7,2851B0
+;	Size in pixels of the points. Same as above, separate them with a comma and should have the same number of values :
+	sizes=15,18,21
+;	Specify the field (from the dbf file) where to find the name of the point (city name in this case) :
+	nameField=NAMEASCII,C,100
+;	Specify when we draw the name of the point (city name in this case) :
+;	This could have one of these 3 values :
+;	always			In this case the name is always draw.
+;	never			In this case the name is never draw.
+;	fromfield		In this case the name is draw if and only if the "fromField" (see below) contain the "contain" text (see below).
+;	Note that in this case, the point could be draw even if it's not in the rupture range (For example, we draw capital name (and point) even if there are less than 1 000 000 people).
+	drawName=|always/never/fromfield|fromfield
+;	In this example, we draw cities names only if the field "FEATURECLA,C,50" contain "Admin-0 capital" (case insensitive).
+;	If the option is "never" or "always" you can let these options empty.
+;	Name of the file from the .dbf :
+	fromField=FEATURECLA,C,50
+;	What this field should contain for displaying it :
+	contain=Admin-0 capital
+;	Is this field is strictly the "contain" text, or should it only contain it ? strict/contain
+;	For example : if you put "strict" : if the field contain "Admin-0 capital region" it will not be used. If you put "contain" it will be used.
+	containType=|strict/contain|strict
+[Shape4]
+;	Filename of the shape file : (here this is a POINTS shape file - the elevations (mountains))
+	filename=~ne_10m_geography_regions_elevation_points.shp
+;	Specify if you want a circle or a triangle :
+	form=|circle/triangle|triangle
+;	Names of the fields for the Latitude & Longitude (find them in the dbf file) :
+	latitudeField=lat_y,N,25,9
+	longitudeField=long_x,N,25,9
+;	Specify the field which will be used for ruptures :
+;	You can find this field in the dbf file.
+	rupturesField=elevation,N,25,9
+;	Ruptures (separate them by a comma) :
+;	In this example, these are the mountains. We take them only if there altitude is higher at 1000m, and apply different colors.
+	ruptures=1000,3000
+;	Colors in HTML format. Separate them by a comma. There must be the same number of values as above for the ruptures :
+	colors=§aa8888,552222
+;	Size in pixels of the points. Same as above, separate them with a comma and it should have the same number of values :
+	sizes=15,20
+;	Specify the field (from the dbf file) where to find the name of the point (mountain name in this case) :
+	nameField=name,C,254
+;	Specify when we draw the name of the point (mountain name in this case) :
+;	This could have one of these 3 values :
+;	always			In this case the name is always draw.
+;	never			In this case the name is never draw.
+;	fromfield		In this case the name is draw if and only if the "fromField" (see below) contain the "contain" text (see below).
+;	Note that in this case, the point could be draw even if it's not in the rupture range.
+	drawName=|always/never/fromfield|fromfield
+;	In this example, we draw mountains names only if the field "comment,C,50" contain "highest" (case insensitive).
+;	If the option is "never" or "always" you can let these options empty.
+;	Name of the file from the .dbf :
+	fromField=comment,C,50
+;	What this field should contain for displaying it :
+	contain=highest
+;	Is this field is strictly the "contain" text, or should it only contain it ? strict/contain
+;	For example : if you put "strict" : if the field contain "highest world point" it will not be used. If you put "contain" it will be used.
+	containType=|strict/contain|contain
