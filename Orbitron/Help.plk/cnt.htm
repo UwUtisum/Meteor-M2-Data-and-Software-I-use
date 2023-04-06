@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+   <meta NAME="Robots" CONTENT="NOINDEX,NOFOLLOW">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+   <META NAME="Author" CONTENT="Sebastian Stoff">
+   <TITLE>Help</TITLE>
+   <LINK REL=stylesheet HREF="../help/style.css" TYPE="text/css">
+</HEAD>
+
+<BODY BGCOLOR=#000000 TEXT=#FFFFFF> 
+<FONT style="font-size: 14">
+
+<CENTER><FONT style="font-size: 38" color=#FF0033>
+Orbitron<BR></FONT>
+<FONT style="font-size: 18" color=#FFFF00>
+(C) 2001-2004 by Sebastian Stoff</FONT><BR><BR>
+<B>»»» <A HREF="#p_8"><FONT style="font-size: 14" color=#FF0033>Orbitron to CARDWARE !</FONT></A> «««</B><BR>
+<BR>
+<FONT COLOR="#33FF33">
+***&nbsp;s&nbsp;y&nbsp;s&nbsp;t&nbsp;e&nbsp;m&nbsp;&nbsp;&nbsp;ś&nbsp;l&nbsp;e&nbsp;d&nbsp;z&nbsp;e&nbsp;n&nbsp;i&nbsp;a&nbsp;&nbsp;&nbsp;s&nbsp;a&nbsp;t&nbsp;e&nbsp;l&nbsp;i&nbsp;t&nbsp;ó&nbsp;w&nbsp;&nbsp;&nbsp;d&nbsp;l&nbsp;a&nbsp;&nbsp;&nbsp;k&nbsp;a&nbsp;ż&nbsp;d&nbsp;e&nbsp;g&nbsp;o&nbsp;***
+</FONT><BR><BR>
+</CENTER>
+
+<UL><UL>	
+	<FONT style="font-size: 20" color=#FFFF66>Spis treści</FONT><BR>
+<UL>
+	<FONT style="font-size: 18" color=#FFFFFF>Szybki start</FONT><BR>
+	<UL>
+		<A HREF="#p_1">1. Wstęp</A><BR>
+		<A HREF="#p_2">2. Minimum teoretyczno-techniczne</A><BR>
+		<A HREF="#p_3">3. Podstawowe funkcje</A><BR>
+		<UL>
+			<A HREF="#p_3_1">3.1. Operacje na TLE</A><BR>
+			<A HREF="#p_3_2">3.2. Informacje o wybranym satelicie</A><BR>
+			<A HREF="#p_3_3">3.3. Szukanie przelotów</A><BR>
+		</UL>
+		<A HREF="#p_4">4. Łączności radiowe</A><BR>
+		<A HREF="#p_5">5. Obserwacje</A><BR>
+		<A HREF="#p_6">6. Czas</A><BR>
+		<A HREF="#p_7">7. Współrzędne geograficzne</A><BR>
+		<A HREF="#p_8">8. Licencja Cardware</A><BR>
+	</UL>
+</UL>
+</UL></UL>
+
+<a name="p_1"></a>
+<FONT style="font-size: 18" color=#33FF33>1. Wstęp</FONT><BR>
+Polska wersja Orbitrona ujrzała wreszcie światło dzienne. Kompletna dokumentacja nadal 
+dostępna jest tylko w języku <A HREF="../help/cnt.htm">angielskim</A>, mam jednak nadzieję,
+że ten tekst pomoże w rozpoczęciu pracy z programem. Pragnę tu zapoznać Ciebie z programem 
+i opisać kilka podstawowych operacji. Jeśli istnieje potrzeba opisania czegoś więcej lub 
+rozwinięcia wspomnianych zagadnień, proszę o kontakt...<BR><BR>
+
+<a name="p_2"></a>
+<FONT style="font-size: 18" color=#33FF33>2. Minimum teoretyczno-techniczne</FONT><BR>
+Programy komputerowe mogą śledzić sztuczne satelity Ziemi znając dane ich 
+orbit. Dane takie w postaci plików TLE (2 liniowych elementów) są produkowane
+i publikowane przez agencje rządowe jak i osoby prywatne. Z pomocą modeli
+SGP4/SDP4 program śledzący wyznacza pozycję satelity w danej chwili. W miarę
+upływu czasu od momentu, w którym dane TLE zostały wyznaczone, rzeczywista
+i obliczona pozycja satelity różnią się coraz bardziej. Dlatego ważne jest
+uaktualnianie plików TLE; w przypadku satelitów takich jak ISS - powiedzmy co
+tydzień, a dla nieco wyżej krążących (np. Irydium) co miesiąc. Dane o orbicie
+tracą swoją ważność po każdym manewrze wykonanym przez satelitę.<BR>
+Program śledzący, potrafi po obliczeniu wektorów położenia i prędkości,
+przedstawić dane w postaci graficznej, jak też podać rozmaite wartości liczbowe,
+takie jak: kąty obserwacyjne, prędkość względna, położenia nad powierzchnią
+Ziemi, szacowana jasność...<BR>
+Dane są obliczane i prezentowane w czasie rzeczywistym, istnieją jednak
+możliwości symulowania dowolnego czasu i szukania przelotów.<BR><BR>
+
+<a name="p_3"></a>
+<FONT style="font-size: 18" color=#33FF33>3. Podstawowe funkcje</FONT><BR><BR>
+<a name="p_3_1"></a>
+<FONT style="font-size: 18" color=#33FF33>3.1. Operacje na TLE</FONT><BR>
+Po uruchomieniu Orbitrona zostaną wczytane opcje i satelity używane ostatnio.
+W celu wczytania interesującego nas pliku TLE, wciskamy przycisk "Wczytaj TLE",
+a następnie wskazujemy plik. Zbiory TLE dołączone do programu pochodzą ze strony
+www.celestrak.com i pogrupowane są tematycznie, np.:<BR>
+<UL>
+	visual.txt  - widoczne gołym okiem (i szczególnego zainteresowania),<BR>
+	amateur.txt - satelity radio-amatorskie,<BR>
+	iridium.txt - konstelacja Irydium...<BR>
+</UL>
+Po wczytaniu pliku wykaz dostępnych w nim satelitów zobaczymy na liście "Satelity"
+w prawej-górnej części ekranu.<BR>
+Chcąc zaznaczyć satelitę jako obiekt do śledzenia, klikamy w kratkę po lewej
+jego stronie lub dwukrotnie klikamy na nazwie. Orbitron potrafi wczytać
+z pliku(ów) TLE, 2000 obiektów. Wszystkie mogą być równocześnie śledzone.<BR>
+Jak to zostało zaznaczone w punkcie 2, pliki TLE muszą być uaktualniane. Można
+to zrobić ręcznie ściągając pliki z Internetu (np. <A HREF="http://www.celestrak.com">www.celestrak.com</A>, <A HREF="http://www.stoff.pl">www.stoff.pl</A>) i umieszczając w katalogu \TLE\ lub
+korzystając z funkcji "Aktualizator TLE" w "Ustawieniach" (Alt+F5).<BR><BR>
+
+<a name="p_3_2"></a>
+<FONT style="font-size: 18" color=#33FF33>3.2. Informacje o wybranym satelicie</FONT><BR>
+Informacje o satelicie zaznaczonym na liście "Satelity" można obejrzeć na
+zakładce "Info Sat./Orbity" u dołu ekranu. Panel zawiera informacje o orbicie
+wyciągnięte z pliku TLE, jak również inne. Dostępny jest notes, w którym
+użytkownik może wpisać swoje adnotacje o obiekcie.<BR>
+Jeden ze śledzonych satelitów może być aktywny. Dla aktywnego satelity
+obliczany jest tzw. "Ślad"/"Ground track" czyli linia łącząca punkty na powierzchni
+Ziemi, nad którymi satelita znajdzie się w czasie bieżącego obiegu. Aktywny
+satelita na mapie otoczony jest linią ("Footprint"/"Strefa widoczności"), jest to strefa z jakiej
+jest widoczny. Dla aktywnego satelity podawane są także aktualne dane w polu
+"Info" w prawej-górnej części okna. UWAGA: W wersji 3.0 pojawiła się możliwość rysowania 
+strefy widoczności dla każdego obiektu.<BR><BR>
+
+<a name="p_3_3"></a>
+<FONT style="font-size: 18" color=#33FF33>3.3. Szukanie przelotów</FONT><BR>
+W celu monitorowania przelotów odbywających się w danej chwili, najlepszym
+sposobem jest obserwacja radaru (Ctrl+2). Radar prezentuje pozycje satelitów
+na lokalnym niebie. Chcąc zobaczyć jakie przeloty czekają nas w najbliższym
+czasie albo symulujemy ręcznie interesujące nas godziny po przełączeniu się
+w tryb "Symulacja", albo po ustawieniu opcji w panelu "Ustawienia predykcji"
+przełączamy się na panel "Predykcja" i wciskamy "Szukaj".<BR>
+Połączenie widoku radaru z ustawieniem interesującego nas czasu jest także 
+przydatne do identyfikacji widzianego wcześniej obiektu.<BR>
+W "Ustawieniach predykcji" możemy wybrać interesujący nas przedział czasu, jak
+i ustawić warunki przelotu: maks. wysokość Słońca, min. wysokość satelity,
+jasność...<BR><BR>
+
+<a name="p_4"></a>
+<FONT style="font-size: 18" color=#33FF33>4. Łączności radiowe</FONT><BR>
+Jednym z głównych zastosowań Orbitrona jest jego wykorzystanie do obsługi amatorskich łączności
+radiowych przez satelity. W tym przypadku, z pewnością, użyteczny okaże się "notes" dostępny na zakładce
+"Info Sat./Orbity". Użytkownik ma możliwość dokonania w nim adnotacji do każdego obiektu, przechowywania danych o częstotliwościach Uplink i Downlink itp...<BR>
+Kolejną użyteczną zakładką będzie "Rotor/Radio" gdzie zebrana jest większość informacji niezbędnych do prowadzenia łączności (ustawienia anteny i dostrojenia radia). To właśnie w tym miejscu program podaje nam poprawki dopplerowskie dla wybranych częstotliwości. Orbitron działa w charakterze serwera DDE i udostępnia niezbędne dane programom które mogą bezpośrednio sterować rotorem anteny lub radiem. Przykładem takiego programu jest WiSP DDE Client, ale istnieje również możliwość napisania własnych sterowników do posiadanego sprzętu.<BR><BR>
+
+<a name="p_5"></a>
+<FONT style="font-size: 18" color=#33FF33>5. Obserwacje</FONT><BR>
+Część satelitów jest widoczna gołym okiem. Wśród nich króluje stacja kosmiczna
+z jasnością do -2 mag. Na orbicie jest kilkadziesiąt satelitów osiągających podczas
+przelotu jasność rzędu 3 mag (i większą), więc jest na co popatrzeć. Jak było to już wspominane wcześniej, satelity potencjalnie widoczne znajdują się w pliku <B>VISUAL.TXT</B>. By satelita był 
+widoczny dla naziemnego obserwatora muszą być spełnione trzy podstawowe warunki:<BR>
+<UL>
+	<LI>niebo musi być dość ciemne i czyste,<BR>
+    <LI>satelita musi mieć "jasność" dostrzegalną przez nasze oko, przynajmniej 4-5 mag,<BR>
+    <LI>nie może znajdować się w cieniu Ziemi.<BR>
+</UL>
+Ze względu na ostatni warunek wizualna obserwacja satelitów jest możliwa i
+korzystna po zmierzchu (wschodnia część nieba) i przed świtem (zachodnia część
+nieba). Na jasność satelity wpływają jego rozmiary i materiał, z jakiego jest
+wykonany oraz odległość i oświetlenie widocznej strony zmieniające się wraz z
+kątem Słońce-Satelita-Obserwator. W późnych godzinach nocnych, satelity na
+niskich orbitach znajdują się w cieniu Ziemi i nie jest możliwa ich obserwacja.<BR>
+Najjaśniejszym zjawiskiem na niebie "wywołanym" przez sztuczne satelity są
+tak zwane flary Irydium. Irydium to konstelacja satelitów telekomunikacyjnych
+krążących na wysokości około 790 km. Satelity te normalnie nie są widoczne gołym
+okiem (jasność 6 mag), zdarza się jednak sytuacja, gdy Słońce odbijając się od
+jednej z trzech anten trafia dokładnie w obszar, na którym się znajdujemy.
+Jasność takiej flary może dochodzić do -8 mag! Orbitron potrafi dokładnie przewidzieć flarę
+i ustalić jej jasność.<BR><BR>
+
+<a name="p_6"></a>
+<FONT style="font-size: 18" color=#33FF33>6. Czas</FONT><BR>
+Dla obserwacji gołym okiem dopuszczalny błąd czasu (różnica między zegarem komputera i czasem rzeczywistym) może wynosić kilka sekund. Gdy obserwujesz flary Irydium wymagana jest precyzja jednosekundowa, kiedy używasz zaś teleskopu, Twój zegar powinien być zsynchronizowany w dziesiątych/setnych częściach sekundy.<BR>
+Istnieje kilka sposobów synchronizacji czasu. W Polsce niektóre radiostacje, np. Pierwszy Program Polskiego Radia nadają co godzina tzw. sygnał czasu. Może on posłużyć do synchronizacji czasu "na oko" lub jak kto woli "na ucho", da nam to precyzje jednosekundową i w zupełności wystarczy do standardowych obserwacji/łączności.<BR>
+Począwszy od wersji 1.3 Orbitron posiada możliwość synchronizacji czasu przez Internet za pomocą protokołu NTP. Synchronizację taką można wykonać z menu kontekstowego "Panelu czasu" lub z "Ustawień" (Alt+F5).<BR>
+Jako źródło dokładnego czasu można wykorzystać także odbiornik GPS.<BR><BR>
+
+<a name="p_7"></a>
+<FONT style="font-size: 18" color=#33FF33>7. Współrzędne geograficzne</FONT><BR>
+Oprócz dokładnego czasu dla precyzyjnej symulacji położenia satelitów, wyznaczenia przelotów, potrzebne są dość dokładne współrzędne geograficzne naszego miejsca położenia. Mimo, iż dla obserwacji przelotów, wystarczą współrzędne miejsca z dokładnością nawet do 50 km (pobliskie miasto) to warto dowiedzieć się o konkretne namiary na naszą miejscowość, dzielnicę, a nawet za pomocą odbiornika GPS domu, czy punktu obserwacji.<BR>
+Współrzędne większych miast znajdują się we wbudowanej bazie danych Orbitrona, natomiast inne można odnaleźć korzystając z map topograficznych lub serwisów internetowych, takich jak <A HREF="http://www.heavens-above.com">www.heavens-above.com</A>.
+<BR><BR>
+
+<a name="p_8"></a>
+<FONT style="font-size: 18" color=#33FF33>8. Licencja Cardware</FONT><BR>
+  Orbitron jest darmowym programem typu Cardware. Oznacza to, że jego używanie
+nie wiąże się z żadnymi opłatami, a użytkownik otrzymuje produkt w pełni
+funkcjonalny i sumiennie dopracowywany. Jeśli jednak uważasz, że wykonałem
+"dobrą robotę" lub po prostu używasz mojego programu - prześlij mi kartkę
+pocztową z Twojej miejscowości/regionu na adres:<BR>
+<center><b><FONT style="font-size: 14"> 
+  Sebastian Stoff<BR>
+  ul. Dziewulskiego 36a/52<BR>
+  87-100 Toruń<BR>
+  Polska<BR>
+</FONT></b></center>
+Lista osób które przysłały kartki dostępna jest w <A HREF="../help/cardware.htm">angielskiej wersji pomocy</A>.<BR><BR>
+
+<TABLE border=0 width="95%" style="font-size: 12" align=center>
+<TR><TD align=center><HR WIDTH="100%" NOSHADE SIZE=1 color=#990000>
+<FONT COLOR="#33FF33">Prace nad Orbitronem ciągle trwają. Czekam na Twoją opinię i raporty błędów. Dziękuję!</FONT>
+<BR><HR WIDTH="100%" SIZE=1 NOSHADE color=#990000>
+Informacja dla testerów i formularz "bug-report" są dostępne w pliku <B>TESTER.TXT</B>!
+</TD></TR></TABLE><BR>
+
+</BODY>
+</HTML>

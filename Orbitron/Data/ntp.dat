@@ -1,0 +1,180 @@
+######################################################################
+## NTP stratum 2 servers                        updated: 2005-02-27 ##
+## source: www.ntp.org                                              ##
+## ---------------------------------------------------------------- ##
+## Format:                                                          ##
+##   CC SS h...                                                     ##
+##                                                                  ##
+## CC - country code                                                ##
+## SS - state code (US only) *                                      ##
+##  h - host (name or IP)                                           ##
+##                                                                  ##
+## * CC and SS fields are optional.                                 ##
+######################################################################
+AR tick.nap.com.ar
+AR time.sinectis.com.ar
+AR tock.nap.com.ar
+AU 202.55.152.20
+AU ntp.tpg.com.au
+AU ntp.qld.iinet.net.au
+BE ntp1.belbone.be
+BE ntp2.belbone.be
+BR ntp.cais.rnp.br
+BR ntp.hiway.com.br
+BR ntp.massayonet.com.br
+BR ntp.pads.ufrj.br
+BR ntp.pop-pr.rnp.br
+BR ntp.ufes.br
+BR ntp1.pucpr.br
+CA ntp.cpsc.ucalgary.ca
+CA ntp1.cmc.ec.gc.ca
+CA ntp2.cmc.ec.gc.ca
+CA time.chu.nrc.ca
+CA time.nrc.ca
+CA timelord.uregina.ca
+CH clock.tix.ch
+CH timeserver.ntp.ch
+CN hshh.org
+CZ ntp.cgi.cz
+CZ ntp.globe.cz
+CZ ntp.karpo.cz
+CZ ntp1.contactel.cz
+CZ ntp2.contactel.cz
+DE ntp1.theremailer.net
+DE time2.one4vision.de
+ES hora.oxixares.com
+ES slug.ctv.es
+FI tick.keso.fi
+FI tock.keso.fi
+FR ntp.ndsoftwarenet.com
+FR ntp.obspm.fr
+FR ntp.tuxfamily.net
+FR ntp.via.ecp.fr
+FR ntp1.tuxfamily.net
+FR ntp2.tuxfamily.net
+GR ntp.mfa.gr
+HK ntp.cuhk.edu.hk
+HR os.ntp.carnet.hr
+HR ri.ntp.carnet.hr
+HR st.ntp.carnet.hr
+HR zg1.ntp.carnet.hr
+HR zg2.ntp.carnet.hr
+HU time.kfki.hu
+ID ntp.incaf.net
+IE ntp.maths.tcd.ie
+IT ntps.net4u.it
+MX ntp2a.audiotel.com.mx
+MX ntp2b.audiotel.com.mx
+MX ntp2c.audiotel.com.mx
+MY ntp.doubleukay.com
+NG ntp.supernet300.com
+NL ntp1.theinternetone.net
+NL ntp2.theinternetone.net
+NL ntp3.theinternetone.net
+NO fartein.ifi.uio.no
+NZ ntp.iprolink.co.nz
+NZ ntp.massey.ac.nz
+NZ ntp.public.otago.ac.nz
+NZ tk1.ihug.co.nz
+NZ tk2.ihug.co.nz
+NZ tk3.ihug.co.nz
+PL a.ntp.adworak.pl
+PL a.ntp.setilabs.net
+RU ntp.psn.ru
+RU ntp.xland.ru
+SE time.flygplats.net
+SI biofiz.mf.uni-lj.si
+SI ntp1.arnes.si
+SI ntp2.arnes.si
+SV clock.cimat.ues.edu.sv
+TR time.deu.edu.tr
+UK audaxsystems.co.uk
+UK ntp.cis.strath.ac.uk
+UK ntp.exnet.com
+UK ntp0.sandvika.net
+UK ntp1.sandvika.net
+UK ntp1.uk.uu.net
+UK ntp2.sandvika.net
+UK ntp2b.mcc.ac.uk
+UK ntp2c.mcc.ac.uk
+UK ntp2d.mcc.ac.uk
+UK tick.tanac.net
+UK time-server.ndo.com
+US AR sushi.lyon.edu
+US AZ decimal.lib.ci.phoenix.az.us
+US AZ dewey.lib.ci.phoenix.az.us
+US AZ ntp.drydog.com
+US blade.avnf.com
+US CA clock.develooper.com
+US CA clock.fmt.he.net
+US CA clock.sjc.he.net
+US CA eschelon.no-such-agency.net
+US CA hydrogen.cert.ucr.edu
+US CA ntp.ucsd.edu
+US CA ntp1.mainecoon.com
+US CA ntp1.sf-bay.org
+US CA ntp2.mainecoon.com
+US CA ntp2.sf-bay.org
+US CA reloj.kjsl.com
+US CA time.berkeley.netdot.net
+US CA time.five-ten-sg.com
+US CO ntp1.linuxmedialabs.com
+US CO time.nist.gov
+US DE louie.udel.edu
+US GA rolex.usg.edu
+US gandalf.theunixman.com
+US IL mars.sg.depaul.edu
+US IL neptune.sg.depaul.edu
+US IL ntp-1.cso.uiuc.edu
+US IL ntp-1.mcs.anl.gov
+US IL ntp-2.cso.uiuc.edu
+US IL ntp-2.mcs.anl.gov
+US IN gilbreth.ecn.purdue.edu
+US IN harbor.ecn.purdue.edu
+US KS ntp1.kansas.net
+US KS ntp2.kansas.net
+US MA ntp.ourconcord.net
+US MA time.johnstalker.ca
+US MN ns.nts.umn.edu
+US MN nss.nts.umn.edu
+US MO time-ext.missouri.edu
+US MT chronos1.umt.edu
+US MT chronos2.umt.edu
+US MT chronos3.umt.edu
+US NC clock1.unc.edu
+US NH ntp.uhfradio.com
+US NJ tick.jrc.us
+US NJ tock.jrc.us
+US NV cuckoo.nevada.edu
+US NV tick.cs.unlv.edu
+US NV tock.cs.unlv.edu
+US NY clock.linuxshell.net
+US NY clock.nyc.he.net
+US NY ntp0.cornell.edu
+US NY reva.sixgirls.org
+US NY sundial.columbia.edu
+US NY timex.cs.columbia.edu
+US PA fuzz.psc.edu
+US PA ntp-1.cede.psu.edu
+US PA ntp-1.ece.cmu.edu
+US PA ntp-2.cede.psu.edu
+US PA ntp-2.ece.cmu.edu
+US time.cachenetworks.com
+US time.heypete.com
+US TX chrono.cis.sac.accd.edu
+US TX ntp.fnbhs.com
+US TX ntp.tmc.edu
+US TX ntppub.tamu.edu
+US TX sundial.cis.sac.accd.edu
+US TX ticker.cis.sac.accd.edu
+US VA ntp-1.vt.edu
+US VA ntp-2.vt.edu
+US VA ntp-3.vt.edu
+US VA ntp-4.vt.edu
+US WA ntp.knowledge.or.id
+US WI ntp1.cs.wisc.edu
+US WI ntp3.cs.wisc.edu
+US WI ntp3.sf-bay.org
+VE ntp.linux.org.ve
+ZA ntp.cs.unp.ac.za
+ZA tock.nml.csir.co.za

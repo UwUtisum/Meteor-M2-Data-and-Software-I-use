@@ -1,0 +1,44 @@
+######################################################################
+## Banner Scheme File                                               ##
+## ---------------------------------------------------------------- ##
+## Format:                                                          ##
+##   nn:fff                                                         ##
+##                                                                  ##
+##  nn - appearance of banner image in seconds, 0=infinite (click   ##
+##       to skip)                                                   ##
+## fff - file name, location relartive to the CONFIG\ directory;    ##
+##       BMP image format is required                               ##
+##                                                                  ##
+## Additional commands:                                             ##
+##   Height     - specify banner panel height in pixels,            ##
+##                default=158                                       ##
+##   InfoString - define string with data displayed above the       ##
+##                banner                                            ##
+##   InfoOnly   - disable displaying of banner picture              ##
+##   InfoSize   - font size for InfoString                          ##
+##   InfoFont   - font name for InfoString                          ##
+##                                                                  ##
+## InfoString data parameters:                                      ##
+##   %a - azimuth                                                   ##
+##   %e - elevation                                                 ##
+##   %r - range [km]                                                ##
+##   %u - uplink [MHz]                                              ##
+##   %d - downlink [MHz]                                            ##
+##   %U - doppler shift for uplink [Hz]                             ##
+##   %D - doppler shift for downlink [Hz]                           ##
+##   %S - %U+%D (total shift in non inverting transponders) [Hz]    ##
+##   %M - %U-%D (total shift in inverting transponders) [Hz]        ##
+##   %t - time                                                      ##
+##   %T - date and time                                             ##
+##   %n - satellite name                                            ##
+## REMARK: %u, %d, %U, %D - values related to object processed by   ##
+##   Rotor/Radio panel (all other are related to active object)     ##
+######################################################################
+InfoString=Az: %a  El: %e  Up: %u MHz  Dn: %d MHz
+InfoOnly=0
+InfoSize=16
+InfoFont=Arial
+Height=158
+5:banner.bmp
+#5:banner1.bmp
+#10:banner2.bmp

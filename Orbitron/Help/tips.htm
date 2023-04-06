@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+   <meta NAME="Robots" CONTENT="NOINDEX,NOFOLLOW">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+   <META NAME="Author" CONTENT="Sebastian Stoff">
+   <TITLE>Help</TITLE>
+   <LINK REL=stylesheet HREF="style.css" TYPE="text/css">
+</HEAD>
+
+<BODY BGCOLOR=#000000 TEXT=#FFFFFF> 
+<BR><FONT style="font-size: 14">
+
+<FONT style="font-size: 24" color=#FFFF66>Tips &amp; tricks</FONT><BR><BR>
+All things described in this section are <B>EXPERIMENTAL</B>.<BR><BR>
+
+<B><font color=#33FF33>Free name for ISS</font></B><BR>
+You can edit name for ISS (NORAD# 25544). To do this, please add <B>[Tips]</B> section to <B>SETUP.CFG</B> file in <B>Orbitron\Config\</B> directory, then put a line containing: <B>NameFor25544=XXX</B> under it. XXX is the ISS name you want. The default name is <B>ISS</B>, but if you want to use one from the loaded TLE file, please put these lines to setup.cfg:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<B>[Tips]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;NameFor25544=</B><BR><BR>
+
+<B><font color=#33FF33>Custom night shadow ratio</font></B><BR>
+Set value of <B>ShadowRatio</B> variable in <B>[Tips]</B> section in <B>SETUP.CFG</B> to customize night shadow ratio. It can be in range from 0 (no shadow) to 10 (absolutely black). Default value is 3.<BR><BR>
+
+<B><font color=#33FF33>Colored object's labels in Data panel</font></B><BR>
+Set value of <B>RedNeg</B> variable in <B>[Tips]</B> section in <B>SETUP.CFG</B> to let Orbitron drawing satellite/sun/moon labels, in Data panel, in red or green color depending on positive elevation.<BR><BR>
+
+<B><font color=#33FF33>Bold lines at viewports</font></B><BR>
+Setting of <B>BoldLines</B> variable in <B>[Tips]</B> section in <B>SETUP.CFG</B> tells Orbitron to draw track/footprint/terminator lines at viewports with bold style. It useful option when you are preparing screen shots for printing.<BR><BR>
+
+<B><font color=#33FF33>Secret console</font></B><BR>
+Pressing <B>Ctrl+Shift+~</B> in Orbitron main window opens 'Secret' console. Please write <B>help</B> command to list available commands.
+<BR><BR>
+
+<TABLE align=center width=90% border=0 cellspacing=0 cellpadding=0>
+<TR bgcolor=#990000><TD height=1 align=left valign=middle colspan="3">
+</td></tr><TR><TD height=17 width=33% align=left valign=bottom>
+<A HREF="faq.htm" class="wht">&lt;&lt;&lt;&nbsp;FAQ</A>
+</td><TD width=34% align=center valign=bottom>
+<A HREF="cnt.htm" class="wht">Contents</A>
+</td><TD width=33% align=right valign=bottom>
+<A HREF="important.htm" class="wht">Important&nbsp;&gt;&gt;&gt;</A>
+</td></tr></TABLE><BR>
+
+</BODY>
+</HTML>

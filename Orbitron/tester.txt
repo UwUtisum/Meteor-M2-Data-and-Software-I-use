@@ -1,0 +1,56 @@
+Welcome!
+
+People like YOU can make this software as bug-free as it is possible.
+
+What can you test:
+  - translations support problems,
+  - saving/loading satellite profiles,
+  - Internet support (Time synch, TLE updater, Message Board),
+  - behaviour of options (in setup, bottom panels, context menus...),
+  - esthetics of interface and viewports,
+  - running on misc system configurations (screen resolutions etc.),
+  - working flexibility,
+  - incomprehensible of options and statements,
+  - language mistakes in interface and documentation (my English isn't perfect).
+Remember, these are only examples, let me know about everything that seems 
+to be wrong. Please use the form below to send me your bug reports. You can 
+also send your suggestions and opinions. E-mail: sebastian@stoff.pl
+
+----- cut here ---------------------------------------------------
+                     ORBITRON BUG REPORT FORM
+A. Tester
+     1.Name             :
+     2.Location	        :
+     3.E-mail           :
+     4.Orbitron version :
+
+B. Hardware
+     1.Operating system :
+     2.RAM (MB)         :
+     3.Processor        :
+     4.Graphics card    :
+     5.Used screen res. :
+
+C.1. Problem(*):
+
+
+
+C.2. [ ] Problem has random nature.
+
+D. Comments(**):
+
+
+E. [X] I want to be listed as beta-tester(#).
+
+----- cut here ---------------------------------------------------
+
+(*) In section C.1 please describe problem in details, write about 
+    preceding operations (step by step) then please check C.2 field 
+    if problem has random nature.
+
+(**)In section D, please write what you want :)
+
+(#) If field E is checked you will be listed in Orbitron help 
+    as a beta-tester (using data written in field A.1.) 
+
+Thank you.

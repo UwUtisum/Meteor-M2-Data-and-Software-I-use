@@ -1,0 +1,472 @@
+Legend: (R) Release  (+) Added  (-) Removed  (*) Fixed/Corrected/Changed
+        (U) Under construction  (W) Work on  (@) Data update
+	(T) Translations related (not all items of that kind are listed)
+-------------------------------------------------------------------------------
+
+2005-09-08 : R : Orbitron 3.71
+2005-09-07 : @ : TLE, cardware.htm, credits.htm
+2005-08-25 : T : installer now offer more translations
+2005-08-25 : * : InnoSetup upgraded to version 5.1.5
+2005-08-25 : T : Bulgarian translation added
+2005-08-17 : * : problem with fixed-width font on printout under some W2k fixed
+2005-08-17 : @ : Czech translation updated
+
+-------------------------------------------------------------------------------
+
+2005-08-11 : R : Orbitron 3.70
+2005-08-10 : @ : TLE, molczan.dat, cardware.htm, credits.htm
+2005-08-09 : T : added item: amTableTA
+2005-08-09 : + : true anomaly (TA) output in 'Data panel'
+2005-08-09 : - : Internet links section removed from help (now available online)
+2005-08-09 : * : 'Low screen resolution' warning is displayed only once now
+2005-08-07 : * : satellites list now allow selection with shift key
+2005-08-06 : + : space as thousand separator is used for numbers output in 
+                 'Data panel'
+2005-08-06 : + : BoldLines option in [Tips] section of SETUP.CFG
+2005-08-06 : * : RedNeg option now works better
+2005-08-06 : + : constellation name of object displayed in 'Data panel'
+2005-08-06 : T : added items: amGroupClassified, amTableConstellation
+2005-08-04 : T : Slovak translation updated
+2005-07-25 : T : Catalan translation added 
+2005-07-17 : * : problem with color of object's lables at 'Data panel' fixed
+2005-07-17 : @ : glossary.htm updated, few terms added
+2005-07-17 : * : problem of time displaying with system time separator set 
+                 to '.' fiexed
+2005-07-17 : T : Ukrainian translation updated
+
+-------------------------------------------------------------------------------
+
+2005-07-12 : R : Orbitron 3.60
+2005-07-11 : @ : cardware.htm, TLE
+2005-07-11 : + : Korean translation added
+2005-07-11 : * : values at Rotor/Radio panel are displayed with bold font if 
+                 elevation is greater that zero
+2005-07-10 : + : new InfoString (banner mode) data parameters: %M, %S
+2005-07-10 : + : Macedonian translation added
+2005-06-27 : * : geomagnetic declination: WMM updated to epoch 2005
+2005-06-27 : * : geomagnetic declination: interpreting of altitude value fixed
+2005-06-23 : * : Message Board now supports hyperlinks and titles
+2005-06-23 : + : RedNeg option in [Tips] section of SETUP.CFG
+
+-------------------------------------------------------------------------------
+
+2005-06-02 : R : Orbitron 3.53
+2005-06-01 : * : problem with Japanese translation fixed
+
+-------------------------------------------------------------------------------
+
+2005-06-01 : R : Orbitron 3.52
+2005-05-31 : @ : TLE
+2005-05-31 : * : fine tuning of translation engine for Japanese language 
+                 support
+2005-05-30 : + : classfd.txt, TLE file included (unofficial data for classified 
+                 objects)
+2005-05-29 : @ : cardware.htm
+2005-05-25 : * : 1 Hz precision for defining frequencies in Rotor/Radio panel
+2005-05-25 : * : sample banner image added
+2005-05-25 : * : lot of grammatical corrections in Help system (thanks Jack)
+2005-05-25 : * : translation engine updated for Japanese language support
+2005-05-25 : + : Japanese translation added
+2005-05-20 : @ : notes files updated
+2005-05-10 : + : IgnoreCRC - new command-line parameter
+2005-05-04 : * : Polish translation corrected
+2005-04-25 : * : Romanian translation added
+
+-------------------------------------------------------------------------------
+
+2005-04-12 : R : Orbitron 3.51
+2005-04-11 : @ : cardware.htm, TLE
+2005-04-11 : @ : some translation files updated
+
+-------------------------------------------------------------------------------
+
+2005-03-23 : R : Orbitron 3.50 FINAL
+2005-03-23 : @ : cardware.htm, TLE
+2005-03-14 : R : Orbitron 3.50 beta 4
+2005-03-10 : @ : cardware.htm
+2005-03-06 : * : procedure for saving and restoring application's main window 
+                 revisited
+2005-03-06 : + : Setup: Save extended map settings option added
+2005-03-06 : + : Setup: Save extended interface settings option added
+2005-03-06 : - : Setup: Save map shift and zoom option removed
+2005-03-06 : * : prediction mode (Passes/Flares) is now saved in profile
+2005-03-02 : * : fixed problem with 'Minimized' command line parameter
+2005-03-02 : + : recognition of satellite group's names provided by 
+                 Space-Track.org
+2005-03-02 : * : moon phase name output corrected
+2005-03-01 : R : Orbitron 3.50 beta 3
+2005-03-01 : * : new data panel layout
+2005-03-01 : * : new 'table to clipboard' function
+2005-03-01 : * : fixed problem with screen saver closing
+2005-03-01 : @ : notes (now provided information about 161 satellites)
+2005-02-28 : R : Orbitron 3.50 beta 2
+2005-02-27 : @ : TLE, molczan.dat, iridium.dat
+2005-02-27 : * : some bugs with data preparation for DDE drivers fixed
+2005-02-27 : + : remembering last used frequencies and modes for each object
+2005-02-27 : * : new InfoString (banner mode) data parameters: 
+                 %U, %D, %t, %T, %n
+2005-02-27 : * : passes search: maximum possible magnitude of object are checked
+                 before prediction under "Minimum pass magnitude" filter turned
+		 on (speed up)
+2005-02-27 : * : TLE updater logs: descriptions printed for Space-Track files
+2005-02-26 : + : RunDriver, Silent, Minimized - new command line parameters
+2005-02-26 : * : fixed data preparing procedure for TrackingDataEx 
+2005-02-26 : * : TrackingDataEx (DDE item) now contain additional time data 
+2005-02-26 : * : drivers configuration moved to SETUP.CFG\[Drivers]
+2005-02-23 : + : debug information for Space-Track downloading
+2005-02-13 : * : new (corrected) application start up sequence
+2005-02-13 : * : captions for satellites are not displayed when too many of them
+                 are drawed
+2005-02-13 : * : limit of objects processed at the same time expanded to 20000
+2005-02-13 : * : loading TLE files (forgetting about not existed)
+2005-02-11 : R : Orbitron 3.50 beta 1
+2005-02-10 : * : small bug fixed in screen saver start up procedure
+2005-02-10 : * : sun.bmp & moon.bmp can be customized now (no CRC checked)
+2005-02-04 : * : installation script improved
+2005-02-04 : * : InnoSetup upgraded to version 5.0.7
+2005-02-04 : * : smartest support for Space-Track
+2005-02-02 : + : TLE updater can unpack ZIP and GZIP files now
+2005-01-29 : + : full support for Space-Track.org TLE update
+2005-01-24 : * : fixed problem with reloading of frequencies after changes in 
+                 notes
+2005-01-24 : * : help files are now optimized for IE and Mozilla
+2005-01-17 : * : now '#' started lines in TLE are ignored (Space-Track format)
+2005-01-17 : + : support for 2 new celestrak groups: cubesat and dmc
+2005-01-17 : * : Finnish translation added
+
+-------------------------------------------------------------------------------
+
+2004-12-15 : R : Orbitron 3.14
+2004-12-14 : @ : TLE, cardware.htm, faq.htm, credits.htm
+2004-12-14 : * : frequencies in Rotor/Radio panel is now reloaded after changes 
+                 in notes
+2004-12-14 : + : Slovenian translation added
+
+-------------------------------------------------------------------------------
+
+2004-11-24 : R : Orbitron 3.13
+2004-11-23 : @ : TLE, cardware.htm
+2004-11-22 : * : source code reorganization finished
+2004-11-18 : * : file name for Turkish translation corrected
+2004-11-18 : + : Belarusian translation added
+2004-11-09 : + : new satellite icon: ISS
+2004-11-08 : * : satellite caption drawing on world map fixed
+2004-11-08 : * : glossary section in help updated
+2004-11-07 : @ : notes files updated for ISS and AO-51
+2004-11-01 : * : RA/Decl for Sun and Moon are now calculated for location 
+                 instead of Earth center
+2004-10-30 : + : Arabic translation added
+2004-10-22 : * : AOS notification: Make satellite active - frequencies loading 
+                 fixed
+2004-10-14 : + : Croatian translation added
+2004-10-07 : * : Minimum pass magnitude filter fixed
+
+-------------------------------------------------------------------------------
+
+2004-10-05 : R : Orbitron 3.12 FINAL
+2004-10-04 : * : "blank pages" problem on some printers fixed
+2004-10-04 : @ : TLE, cardware.htm
+2004-10-02 : * : Use default direction letters option fixed
+2004-10-01 : + : Kannada translation added
+2004-10-01 : * : uplink/downlink data raplaced in banner mode 
+2004-09-27 : R : Orbitron 3.12 rc 1
+2004-09-26 : * : BANNER.DAT renamed to BANNER.SET
+2004-09-26 : + : testing stage extenstions to banner mode added
+2004-09-26 : + : Albanian translation added
+2004-09-25 : * : tracked satellites: Add/Only Prediction results
+2004-09-24 : * : location coordinates edit boxes (lon/lat/locator) are 
+                 recalculated only if needed
+2004-09-24 : * : window footer is now not refreshed during viewport move/rotate
+2004-09-24 : * : calculation of azimuth under mouse cursor on radar fixed
+2004-09-24 : + : Serbian translation added
+2004-09-21 : * : About panel charset problem fixed
+2004-09-21 : + : Turkish translation added
+2004-09-21 : * : corrected world.loc file
+2004-09-20 : R : Orbitron 3.12 beta 3
+2004-09-19 : + : tracked satellites: Add/Only Up/Down (Sat list context menu)
+2004-09-19 : + : tracked satellites: Invert option (Sat list context menu)
+2004-09-19 : * : mouse cursor over viewport is now changed properly
+2004-09-19 : + : Active satellite center option (World map viewport context 
+                 menu)
+2004-09-17 : * : setup script modernization (unchanged files recognition)
+2004-09-17 : + : JPEG format for screen shots option (Setup/Extra)
+2004-09-17 : + : Hungarian translation added
+2004-09-12 : R : Orbitron 3.12 beta 2
+2004-09-11 : + : added 1 missing item to translation
+2004-09-11 : * : corrected AOS notification behaviour, now AOS is not 
+                 detected after profile load or when satellite is just 
+                 checked for tracking
+2004-09-11 : * : setup script optimalization
+2004-09-11 : + : initializing "degree symbol for Big5 charset" option
+                 during installation
+2004-09-10 : * : control's tab order corrected in some places
+2004-09-10 : + : support for Alarm driver
+2004-09-10 : * : Autostart Rotor/Radio driver option now is ignored in
+                 screen saver mode
+2004-09-10 : + : new item for DDE Tracking conversation: TrackingDataEx
+2004-09-10 : - : Extended DDE mode option (Setup/Extra)
+2004-09-07 : @ : NTP stratum 2 serwers list updated
+2004-09-06 : R : Orbitron 3.12 beta 1
+2004-09-05 : * : support for translation of items displayed by Orbitron 
+                 Screen Saver
+2004-09-05 : + : Image exporter option (Setup/Extra)
+2004-09-04 : + : Extended DDE mode option (Setup/Extra)
+2004-09-04 : * : new AOS notification behaviour, now AOS is not detected 
+                 after application start or location change
+2004-09-04 : + : Make satellite active after AOS option (Setup/Extra)
+2004-09-04 : + : Message Board System: Don't remind me again option
+2004-08-31 : * : message about new version is not displayed now when 
+                 user just install this version
+2004-08-31 : * : new QUERY_STRING for Message Board System (providing 
+                 anonymous statistic data to the server, including:
+                 Orbitron version, language, run counter, user locator)
+2004-08-31 : + : Simplified Chinese translation added
+2004-08-31 : * : Updated Traditional Chinese translation
+
+-------------------------------------------------------------------------------
+
+2004-08-30 : R : Orbitron 3.11
+2004-08-29 : @ : TLE, notes, molczan.dat, iridium.dat, cardware.htm
+2004-08-22 : + : Autostart Rotor/Radio driver option (Setup/Extra)
+2004-08-18 : + : support for Translator 2.0 files
+2004-08-12 : + : Afrikaans, Ukrainian and Lithuanian translations added
+2004-08-11 : * : links section in help revisited
+2004-08-11 : * : InnoSetup upgraded to version 4.2.7
+
+-------------------------------------------------------------------------------
+
+2004-04-19 : R : Orbitron 3.10
+2004-04-15 : + : Russian, Dutch and Danish translations added
+2004-03-26 : * : sorting by name is now more intelligent for satellites 
+                 with prefixes: IRIDIUM, NOAA, GOES, ORBCOMM FM, COSPAS,
+                 COSMOS, SL
+2004-03-26 : * : translation info dialog for English language fixed
+
+-------------------------------------------------------------------------------
+
+2004-03-01 : R : Orbitron 3.0 FINAL
+2004-02-26 : @ : translations updated
+2004-02-26 : @ : TLE, molczan.dat, cardware.htm
+2004-02-20 : * : 'after printing' problem fixed
+2004-02-20 : * : InnoSetup upgraded to version 4.1.7
+2004-02-19 : * : locations DB buttons problem fixed
+2004-02-16 : R : Orbitron 3.0 beta 3
+2004-02-14 : + : F12 in screen saver turns to standard application mode
+                 (experimental)
+2004-02-14 : + : option to force default direction letters
+2004-02-14 : + : support for translated direction letters (N E S W)
+2004-02-13 : * : new fixes to SGP4/SDP4 models implementation - problem 
+                 with exceptions during processing of some decayed sats
+2004-02-13 : + : About translation icon in Setup
+2004-02-12 : + : drawing of track on mini radar is now standard option
+2004-02-11 : * : spelling bugs fixed
+2004-02-10 : + : Iridium flare magnitude output
+2004-02-03 : R : Orbitron 3.0 beta 2
+2004-02-02 : * : fixed problem with exceptions during process of some 
+                 decayed sats
+2004-02-02 : @ : TLE, notes, cardware section in help updated
+2004-02-02 : + : Portuguese translation added
+2004-02-01 : * : QuickMenu icon (right-upper corner of window) displaying
+                 corrected
+2004-02-01 : * : fixed problem with loading few archival TLE files
+2004-02-01 : * : profile saving problem fixed
+2004-01-31 : * : new mini radar image
+2004-01-31 : * : translation loading procedures fixed
+2004-01-31 : * : added many missing items to translation base file
+2004-01-31 : + : Spanish, German, Chinese (trad), Czech translations 
+                 added
+2004-01-30 : W : Translator application
+2004-01-25 : * : time panel font changed to Arial
+2004-01-24 : * : added 2 missing items to translation base file
+2004-01-24 : * : problem with DDE drivers closing fixed
+2004-01-21 : * : Credits section in help reorganized
+2004-01-21 : * : Polish help file and translation corrected
+2004-01-21 : * : English language version corrected
+2004-01-19 : R : Orbitron 3.0 beta 1
+2004-01-16 : @ : TLE, notes, visual magnitudes, iridium status
+2004-01-16 : + : Polish translation added
+2004-01-16 : + : help system adaptation for translations support
+2004-01-16 : @ : cardware section in help updated
+2004-01-16 : * : existance of FILES.CRC is now checked
+2004-01-16 : @ : NTP stratum 2 serwers list updated
+2004-01-14 : + : translation engine implemented
+2004-01-14 : * : detection of running DDE driver fixed
+2004-01-11 : W : implementation of translation engine
+2004-01-11 : + : new sorting key: Standard magnitude
+2004-01-10 : W : implementation of translation engine
+2004-01-08 : * : fixed problem with running on Windows 2003 Server,
+                 GeoMag module
+2004-01-06 : + : support for port number in TLE updater, e.g.
+                 http://www.server.com:88/tle.zip
+2004-01-05 : * : "Ignore if magnitude is unknown" option fixed
+2004-01-05 : * : moon and sat icons drawing (system dependent bug)
+2004-01-03 : + : new start picture in installer
+2004-01-03 : * : saving world map preset procedure corrected
+2004-01-02 : + : save settings on exit (option)
+2004-01-02 : - : "Run with STARTUP.INI" option removed from setup
+2004-01-02 : + : text color configuration in world map preset
+2004-01-01 : + : turn back time if TLE expired in screen saver (option)
+2004-01-01 : + : high resolution ground/sky track (option)
+2004-01-01 : + : TLE update confirmation (during application start)
+                 is now optional
+2003-12-30 : * : new track markers
+2003-12-30 : - : hidden option for track on mini radar removed
+2003-12-30 : + : option for longer ground track (2 or 3 periods)
+2003-12-29 : + : footprints for all tracked satellites
+2003-12-29 : * : installer script modernization for translations support
+2003-12-29 : * : InnoSetup upgraded to version 4.0.10
+2003-12-29 : * : fixed problem with TaskBar repaint on WinXP when 
+                 switching from fullscreen to window
+2003-12-28 : + : Autoupdate TLE option added to QuickMenu
+2003-12-28 : * : TLE Updater reorganization
+2003-12-22 : + : keyboard shortcuts for Load/Save Settings and others...
+2003-12-21 : + : prediction results printing
+2003-12-20 : * : satellite icon now can be black
+2003-12-20 : * : map dont shifts now, when changing to one with 
+                 different resolution
+2003-12-20 : * : fixed problem with loading world map bitmaps with
+                 depth other that 24 bit
+2003-12-20 : - : server side: old Message Board System for Orbitron 2.0 
+                 is no longer supported
+2003-12-12 : * : prediction results save format corrected
+2003-12-12 : + : Gray, Printer world map preset
+2003-12-07 : + : TLE update can be more automatic now
+2003-12-06 : * : status footer is now repainted after objects moves
+2003-12-06 : * : INI files reorganization (adequate to setup)
+2003-12-06 : * : setup interfece modernization for translations support
+2003-12-06 : * : iridium flares results table optimized
+2003-12-03 : + : option for degree symbol in Big5 charset
+2003-11-30 : * : main interface modernization for translations support
+2003-11-01 : * : fixed procedure of loading DRIVERS.DAT and BANNER.DAT
+2003-10-15 : + : MoonRotation option (southern hemisphere)
+2003-10-15 : * : moon drawing fixed
+2003-10-14 : + : "Force" command line parameter - allow to run second
+                 instance of Orbitron
+2003-10-14 : + : interactive radar rotation
+2003-10-14 : + : radar viewport rotation, angle defined in setup
+2003-10-14 : - : "Keep DDE driver running" option removed from setup
+2003-10-14 : * : DDE driver closing when "No satellite" disabled
+
+-------------------------------------------------------------------------------
+
+2003-10-09 : R : Orbitron 2.41
+2003-10-08 : @ : TLE, notes, visual magnitudes, Iridium status
+2003-10-08 : @ : cardware section in help
+2003-10-08 : + : options for drawing compass needle and extra grid on 
+                 radar viewport
+2003-10-08 : * : drawing time information on radar viewport
+2003-09-28 : * : upgraded install script, new notes update procedure
+2003-09-28 : * : InnoSetup upgraded to release 4
+2003-09-28 : * : QuickMenu reorganization
+2003-09-28 : * : small reorganization of icon bar on Main panel
+2003-09-28 : + : nightlife (dark color scheme for night usage)
+2003-09-28 : * : prediction result sorting (custom date format)
+2003-09-28 : * : map moving in windowed mode
+2003-09-28 : * : problem with night shadow drawing at equinox
+
+-------------------------------------------------------------------------------
+
+2003-07-16 : R : Orbitron 2.40
+2003-07-15 : @ : TLE, notes, visual magnitudes, Iridium status
+2003-07-15 : @ : cardware section in help
+2003-07-15 : * : spelling fixes
+2003-07-02 : + : help shortcut in bottom panel
+2003-07-02 : + : new sorting keys: Inclination to 90 deg, Max. Magnitude
+2003-07-02 : * : export file of prediction results improved
+2003-06-22 : + : banner mode without right panels (Ctrl+Shift+Enter)
+2003-05-31 : + : ShadowRatio option in [Tips] section of SETUP.CFG
+2003-05-31 : + : DefaultMouseCursor option in [Tips] section of SETUP.CFG
+2003-05-25 : + : user DDE drivers for rotor and radio support
+2003-05-11 : + : uplink/downlink mode list for WiSP DDE Client
+2003-05-11 : + : moon rotor tracking (EME-QSO)
+2003-05-11 : + : sun rotor tracking
+2003-05-11 : + : new Rotor/Radio panel
+2003-05-11 : * : doppler shift calculation fixed (thanks Otto)
+2003-05-11 : * : bug report form in TESTER.TXT file updated
+2003-04-08 : * : OldSiteIcon option in [Tips] section of SETUP.CFG
+2003-04-08 : * : new site icon
+2003-04-08 : * : screen saver termination without reason bug
+2003-03-26 : + : custom date format
+2003-03-25 : + : banner mode (Ctrl+Shift+Space)
+2003-03-25 : + : hide bottom panels option (Ctrl+Space)
+2003-03-24 : * : illuminated part of satellite is now printed as percents
+2003-03-24 : * : sun on radar viewport is now looking bit better
+2003-03-24 : + : moon position and phase output on viewports
+2003-03-23 : * : declination output fixed (thanks John)
+2003-03-22 : + : moon coordinates is now provided
+2003-03-20 : * : source code optimalization / speed-ups
+
+-------------------------------------------------------------------------------
+
+2003-03-19 : R : Orbitron 2.30
+2003-03-18 : @ : TLE, notes, visual magnitudes, Iridium status
+2003-03-18 : @ : cardware section in help
+2003-03-18 : * : clock font problem fixed (I hope)
+2003-03-18 : * : OMBS major bug fix
+2003-03-15 : + : new sound file CAMERA.WAV added
+2003-03-14 : + : support for rotor/radio control via WiSP DDE Client
+2003-03-13 : + : doppler shift calculation
+2003-03-10 : + : installer option: Create a Quick Launch icon for screen saver
+2003-03-03 : + : replaced user files (or no longer needed) are copied to Backup\
+                 directory during installation
+2003-03-03 : * : NTP.DAT file moved from Config\ to Data\ directory
+2003-03-03 : @ : NTP stratum 2 serwers list updated
+2003-03-03 : + : more effective NTP module, new NTP interface
+2003-02-23 : + : InnoSetup upgraded to version 3.0.6
+2003-02-22 : + : minimum magnitude for passes is now real value
+2003-02-22 : * : location data editing
+2003-02-22 : + : tuning of orbitron.bmp file (right-bottom corner) is allowed
+2003-02-22 : * : Orbitron group is now removed from Start Menu 
+                 during uninstallation
+2003-02-22 : + : OMBS improvements
+2003-02-01 : * : 200% zoom is now "smart centering"
+2003-02-01 : * : some spelling fixes
+2003-02-01 : * : interpreting of "  " in satellite name corrected
+2003-01-22 : @ : Orbitron-PL.txt file updated
+2003-01-14 : * : bug in night shadowing on map zoom
+
+-------------------------------------------------------------------------------
+
+2003-01-01 : R : Orbitron 2.21
+2003-01-01 : @ : TLE, notes, visual magnitudes, Iridium status
+2003-01-01 : @ : cardware section in help
+2003-01-01 : * : fixed NTP component
+2003-01-01 : + : notes template support (loaded from Notes\00000.txt)
+2002-12-22 : + : NASA world map preset
+2002-12-22 : + : world map context menu \ zoom \ location center
+2002-12-22 : * : fixed problem with inverted directions on mini radar
+2002-12-10 : * : TLE outdated notification and setup spelling fixes
+2002-11-28 : + : help: additional info about time zones
+
+-------------------------------------------------------------------------------
+
+2002-11-18 : R : Orbitron 2.20
+2002-11-18 : * : new version naming format (X.XX)
+2002-11-17 : + : "first start" dialog
+2002-11-16 : * : help engine bugs fixed
+2002-11-16 : * : screen saver: bug fixed (keep running after focus loosing)
+2002-11-14 : + : program exit confirmation is now optional
+2002-11-08 : + : support for additional 2 color world maps
+2002-11-08 : * : decimal separator is now always '.'
+2002-11-08 : * : screen saver: bug fixed (TLE outdated warning removed)
+
+-------------------------------------------------------------------------------
+
+2002-11-03 : R : Orbitron 2.1
+2002-11-02 : + : OMBS nonsense data protection
+2002-11-02 : + : new notes files 
+2002-11-02 : + : Internet links section in help
+2002-10-29 : + : Polish "Quick Start" document in ORBITRON-PL.TXT
+2002-10-27 : * : HTTP Get component is now more effective
+2002-10-23 : + : intelligent update of Working Iridiums status
+2002-10-23 : + : intelligent update of notes files
+2002-10-23 : + : new OMBS engine on server side (PHP)
+2002-10-23 : + : UserId generation, check "UserId" command in console
+2002-10-17 : * : Working Iridiums - Prediction setup
+2002-10-17 : * : loading RefreshRate from INI files
+2002-10-17 : + : "GeoMag" command in console
+2002-10-17 : + : geomagnetic declination output on radar (WMM-2000)
+
+-------------------------------------------------------------------------------
+
+2002-10-13 : R : Orbitron 2.0 FINAL

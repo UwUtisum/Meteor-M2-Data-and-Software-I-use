@@ -1,0 +1,407 @@
+<HTML>
+<HEAD>
+   <meta NAME="Robots" CONTENT="NOINDEX,NOFOLLOW">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+   <META NAME="Author" CONTENT="Sebastian Stoff">
+   <TITLE>Help</TITLE>
+   <LINK REL=stylesheet HREF="style.css" TYPE="text/css">
+</HEAD>
+
+<BODY BGCOLOR=#000000 TEXT=#FFFFFF> 
+<BR><FONT style="font-size: 14">
+
+<FONT style="font-size: 24" color=#FFFF66>Screen elements</FONT><BR><BR>
+
+<A NAME="vpr_map"></A>
+<FONT style="font-size: 18" color=#33FF33>Viewport: World map</FONT><BR>
+<CENTER>
+<table border=0 cellspacing=3 cellpadding=0 WIDTH="450"><tr><td align=center colspan=2>
+<IMG SRC="screen-map.gif" WIDTH="432" HEIGHT="306" BORDER=0 ALT="World map viewport"></td></tr><tr>
+<td align=right valign=top width="20"><B>1</B></td><td>Eclipsed satellite</td></tr>
+<td align=right valign=top><B>2</B></td><td>Eclipsed part of ground track</td></tr>
+<td align=right valign=top><B>3</B></td><td>Illuminated part of ground track</td></tr>
+<td align=right valign=top><B>4</B></td><td>Active satellite with footprint and ground track; data for this satellite is presented in right Info panel</td></tr>
+<td align=right valign=top><B>5</B></td><td>Illuminated satellite</td></tr>
+<td align=right valign=top><B>6</B></td><td>Current location</td></tr>
+<td align=right valign=top><B>7</B></td><td>Night shadow</td></tr>
+<td align=right valign=top><B>8</B></td><td>Terminator</td></tr>
+<td align=right valign=top><B>9</B></td><td>Grid</td></tr>
+<td align=right valign=top><B>10</B></td><td>Grid description</td></tr>
+</table></CENTER>
+&nbsp;&nbsp;&nbsp;&nbsp;Map is one of Orbitron viewports. It presents positions of satellites over the world. You can pick location or zoom the area you are interested in by context menu. Also map moving is allowed be dragging it. Right and left mouse buttons also have support for clicking on satellites.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Map is configured by <B>Visualisation</B> - bottom panel and <B>Setup</B>. By default, ground track has two colors: light for illuminated part, and dark for eclipsed. Other lines you see on the map are <B>terminator</B> (ground points with sun elevation equal to zero) and <B>footprint</B> (satellite visible zone).<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Please note that the time displayed below the viewport is not current, but it's the time of presented situation.<BR>
+<BR>
+
+<A NAME="vpr_rad"></A>
+<FONT style="font-size: 18" color=#33FF33>Viewport: Radar</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Radar viewport is perfect for monitoring situation (real time or simulated) on your sky. Selection of satellite, by clicking it, is allowed. You can set what you want to see on it in the same way as world map configuration.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;If show <B>Extra data</B> is checked, in top-left corner of radar, you will see additional information. One of these is <B>Geomagnetic declination</B>; its the difference between real north direction and magnetic north direction in your location. This angle is useful when you are using a compass for azimuth determination. East declination means that magnetic north is on the east side of real north.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Interactive radar rotation by mouse dragging is available to make your observation easier.<BR>
+<BR>
+
+<A NAME="qui"></A>
+<FONT style="font-size: 18" color=#33FF33>QuickMenu</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Click at <B>right-top corner</B> of the Orbitron window or press <B>ESC</B> to enter the QuickMenu. It's the fastest way to access important program functions.<BR><BR>
+
+<A NAME="rig_loa"></A>
+<FONT style="font-size: 18" color=#33FF33>Right panels: Satellites</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;List of loaded objects. You can click checkbox (or press spacebar) to track satellite, double-click on satellite name or press Enter to perform 'Go to' operation. 'Go to' adds satellite to tracking list and makes it active. Hold down Ctrl key and drag over list to perform mass selection. Context menu with sorting functions is available.<BR>
+<BR>
+
+<A NAME="rig_inf"></A>
+<FONT style="font-size: 18" color=#33FF33>Right panels: Info</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Information about active satellite and the Sun formated in table:
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Name</TD>
+	<TD>Satellite name</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Lat</TD>
+	<TD>Latitude of ground track</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Lon</TD>
+	<TD>Longitude of ground track</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Alt</TD>
+	<TD>Altitude of satellite above earth (kilometers)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Azm</TD>
+	<TD>Observer look azimuth to satellite</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Elev</TD>
+	<TD>Observer look elevation to satellite</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>RA</TD>
+	<TD>Right ascension of satellite (for sky map reference)</TD>
+</TR>   
+<TR>
+	<TD align=right width=25%>Decl</TD>
+	<TD>Declination of satellite (for sky map reference)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Range</TD>
+	<TD>Distance from observer to satellite (kilometers)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>RRt</TD>
+	<TD>Range rate; changing of Range in time; for Doppler shift (kilometers per second)</TD>
+</TR>							
+<TR>
+	<TD align=right width=25%>Vel</TD>
+	<TD>Velocity of satellite (kilometers per second)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Direction</TD>
+	<TD>Ascending - satellite moves from South to North; Descending - North to South</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Eclipse</TD>
+	<TD>Possible values are: Penumbral / Umbral / No (satellite is illuminated)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>MA (phase)</TD>
+	<TD>Mean Anomaly (0-360 degrees) and AM-SAT phase (0-255) of satellite counted from perigee</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>TA</TD>
+	<TD>True Anomaly (0-360 degrees)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Orbit #</TD>
+	<TD>Orbit number counted from first perigee</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Mag (illum)</TD>
+	<TD>Visual magnitude and illuminated fraction in percent. Possible values are: 'not visible' (satellite is below the horizon), 'eclipsed' (satellite is in umbral eclipse), 'X.X* (80%)' (magnitude and illuminated fraction, * - penumbral eclipse)</TD>
+</TR>
+</table>
+Sun and moon data similar to satellite...<BR><BR>
+
+<A NAME="tim"></A>
+<DL><FONT style="font-size: 18" color=#33FF33>Time panel</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Time panel displays information about current or simulated time. It also shows time control settings. You can show/hide this panel by pressing <B>F11</B>, click right mouse button to enter the context menu with time functions, or left to change settings like RT/SIM modes. Meanings of labels are described below:
+<dt><B>RT/SIM</B>
+<dd>Real-time mode / Simulation mode
+<dt><B>CLOCK</B>
+<dd>Panel works in clock mode
+<dt><B>AUTO-FWD/AUTO-BCK</B>
+<dd>Auto forward/backward simulation mode
+<dt><B>LCL/UTC</B>
+<dd>Orbitron is displaying Local/UTC time
+</DL>
+
+<A NAME="mra"></A>
+<DL>
+<FONT style="font-size: 18" color=#33FF33>Mini radar</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Mini radar is located in right-bottom corner of the Orbitron window. Three radar modes are possible:<BR>
+<dt><B>On</B>
+<dd>Radar is always visible
+<dt><B>Off</B>
+<dd>Radar is hidden
+<dt><B>Auto</B>
+<dd>Radar is visible if any object appears on the sky and main viewport is other than radar</TD>
+</DL>
+You can click right mouse button to enter the context menu or press <B>F12</B> to change radar mode. You can select satellite on radar by clicking on it.<BR><BR>
+
+<A NAME="bot_mai"></A>
+<FONT style="font-size: 18" color=#33FF33>Bottom panels: Main</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;This panel is visible on startup. It contains the time control functions:<BR>
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Calculation</TD>
+	<TD>'Real-time (RT)' / 'Simulation (SIM)' mode, Ctrl+Home/End</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Time</TD>
+	<TD>Orbitron is displaying Local/UTC time</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Time edit box</TD>
+	<TD>Enter time string here in simulation mode</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Auto FWD/BCK</TD>
+	<TD>Auto forward/backward simulation mode, Ctrl + PgUp/PgDn (use controls above to define time jump interval)</TD>
+</TR>
+</table>
+and tool bar with basic program functions:<BR>
+<DL>
+<CENTER><IMG SRC="tool_bar.gif" WIDTH="414" HEIGHT="29" BORDER="0" ALT=""></CENTER>
+From left to right:
+<dt><B>Help</B>
+<dd>Open Orbitron Help System, Alt+F1
+<dt><B>Screen shot</B>
+<dd>Grab screen to BMP file, Alt+F2 (Alt+Shift+F2 for viewport only)
+<dt><B>Minimize application</B>
+<dd>Minimize application to taskbar (usefull if FullScreen mode), Alt+F3</TD>
+<dt><B>Close application</B>
+<dd>Save settings and close Orbitron, Alt+F4</TD>
+<dt><B>Setup</B>
+<dd>Run Orbitron <A HREF="setup.htm">Setup</A> with Interet TLE Updater, NTP PC clock synchronization..., Alt+F5
+<dt><B>Load settings</B>
+<dd>Load settings from INI file
+<dt><B>Save settings</B>
+<dd>Save settings to INI file. Orbitron saves all settings on closing, but you can create your own configuration sets to speed up your work
+<dt><B>Message Board System</B>
+<dd>Open MBS window where you can find new messages from Orbitron author and information about new versions of the product
+<dt><B>Nightlife</B>
+<dd>Dark color-scheme for night usage (it protects your eyes from bright screen dazzle)
+<dt><B>Hide bottom panels</B>
+<dd>Please check it to hide bottom panels, Ctrl+Space; with Shift key pressed, banner mode is called, Ctrl+Shift+Space
+<dt><B>Maximize viewport</B>
+<dd>When checked, all area of Orbitron window is allocated for viewport, Ctrl+Enter; with Shift key pressed, banner mode is called, Ctrl+Shift+Enter
+<dt><B>Fullscreen/Windowed mode</B>
+<dd>If checked Orbitron works in fullscreen mode, Alt+Enter (note that windowed mode is allowed in resolutions higher than 800x600)
+<dt><B>Refresh interval</B>
+<dd>Define interval for data calculation, Ctrl+Z,X
+</DL>
+
+<A NAME="bot_vis"></A>
+<FONT style="font-size: 18" color=#33FF33>Bottom panels: Visualisation</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;You can set visualisation options and change viewport here. Please remember that additional visualisation settings are available in <B>Setup</B>. Groups presented on this panel are:<BR>
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Mini Radar</TD>
+	<TD>Mini Radar configuration</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Sat on track</TD>
+	<TD>Define satellite position on the ground track, default is <B>begin</B>; but in simulation mode, <B>middle</B> is also useful</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Show on ...</TD>
+	<TD>Elements visible on chosen viewport</TD>
+</TR>
+</TR>
+</table><BR>
+
+<A NAME="bot_loc"></A>
+<FONT style="font-size: 18" color=#33FF33>Bottom panels: Location</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Orbitron allows you to choose location from database or enter it manually. You can edit existing databases.<BR>
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Name</TD>
+	<TD>Name of location</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Sign</TD>
+	<TD>Short version of name (used on map)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Grid locator</TD>
+	<TD>Grid locator of location in AA00aa format</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Longitude, Latitude</TD>
+	<TD>Coordinates of location (see note below)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Altitude</TD>
+	<TD>Altitude of location above sea level (type '0' if unknown)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Choose</TD>
+	<TD>Choose current location for calculations. Button is enabled when current location is NOT equal to data in edit fields.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Add to DB</TD>
+	<TD>Add location to database</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Update</TD>
+	<TD>Update edited location in database</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Remove</TD>
+	<TD>Remove item from database</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Clear</TD>
+	<TD>Clear database</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>&lt;&lt;&lt;, x, &gt;&gt;&gt;</TD>
+	<TD>Change database</TD>
+</TR>
+</table>
+Latitude editing styles: <B>10 S</B> = <B>-10</B>, <B>10 N</B> = <B>10</B>.<BR>
+Longitude editing styles: <B>10 E</B> = <B>10</B>, <B>10 W</B> = <B>-10</B> = <B>350</B><B></B>.<BR>
+You can also enter your coordinates in DMS notation using slash "<B>/</B>", (e.g. <B>10/30/13 N</B> means <B>10°30'13" N</B> and it's equal to <B>10.5036 N</B>).<BR>
+Note that location DB is saved immediatelly. TIP: You can use map context menu for loacation pick up.<BR>
+<BR>
+
+<A NAME="bot_inf"></A>
+<FONT style="font-size: 18" color=#33FF33>Bottom panels: Sat/Orbit info</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Information about satellite and its orbit including <B>Notes</B> created by user.<BR>
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Name</TD>
+	<TD>Satellite name. Click right mouse button on it to get TLE information. Red font color of this field means that satellite has wrong CRC (checksum) data.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Data table</TD>
+	<TD>Contains information decoded and calculated from TLE. Some other data is also provided.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Notes</TD>
+	<TD>Information about satellite edited by user. You can use it for radio amateurs purposes (e.g. DownLink / UpLink frequencies) or store your hunted passes. Notes is automatically saved. Double-clicking on EMPTY notes loads template from <B>Notes\00000.txt</B> file. Read it for details.
+</TD></TR>
+</TABLE><BR>
+
+<A NAME="bot_prs"></A>
+<FONT style="font-size: 18" color=#33FF33>Bottom panels: Prediction setup</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;This panel contains options for passes/flares prediction.<BR>
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Search period</TD>
+	<TD>It can be set automatically (as period before/after the current moment) or manually (as free time range)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Illumination required</TD>
+	<TD>Check it for visual passes or uncheck for radio amateur purposes</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Sun elevation</TD>
+	<TD>For visual passes, check it and define maximum sun elevation</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Satellite elevation</TD>
+	<TD>Minimum satellite elevation during the pass</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Minimum flare magnitude</TD>
+	<TD>Orbitron can calculate flare magnitude. You can set the limit for this parameter to catch the brightest ones.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Brief output</TD>
+	<TD>If checked, 1 line of output is generated for the event (MET); if not, each event is described by 3 lines (AOS, MET, LOS)</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Minimum pass magnitude</TD>
+	<TD>You can check that option and define minimum pass magnitude (remember that mag of -1 is brighter then 1); minimum magnitude equal to 3 gives you the brightest passes (mag 3.0 and under); <B>NOTE:</B> maximum magnitude of pass often occurs at different moment than MET</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Ignore if magnitude is unknown</TD>
+	<TD>It's an extension to the option above. If checked, satellites with unknown magnitude can also be listed.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Search passes for</TD>
+	<TD>Define for which satellites Orbitron makes pass calculations</TD>
+</TR>
+</TABLE><BR>
+<B>NOTE:</B> Last four options and <B>Illumination required</B> apply only
+to Passes, not to Flares.<BR>
+<BR>
+
+<A NAME="bot_pre"></A>
+<FONT style="font-size: 18" color=#33FF33>Bottom panels: Prediction</FONT><BR>
+This panel allows you to calculate Passes/Flares, then save it, print, or 'go to' selected event.
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Passes / Flares</TD>
+	<TD>Prediction mode switcher; you must load Iridium TLE file before starting flares prediction</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Results legend</TD>
+	<TD>In Iridium flares result table appears:<BR>
+	Ant - antenna that makes flare (F/L/R - Front/Left/Right)<BR>
+	Dir - satellite direction (A/D - Ascending/Descending)	
+	</TD>
+</TR>
+</table><BR>
+
+<A NAME="bot_rot"></A>
+<FONT style="font-size: 18" color=#33FF33>Bottom panels: Rotor/Radio</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;This panel shows doppler shifts for uplink and downlink frequencies. It allows you to co-operate with drivers (e.g. WiSP DDE Client or My DDE Client). Driver is an external application used to control some rotor and radio interfaces via Windows DDE engine. You can see the status label that tells you about Driver conversation status.<BR>
+<TABLE width=95% border=0 cellspacing=0 cellpadding=5 align=center style="font-size: 14">
+<TR>
+	<TD align=right width=25%>Azimuth, Elevation, Receive/doppler, Transmit/doppler, Dnlink mode, Uplink mode</TD>
+	<TD>Values from these fields are sent to driver.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Dnlink, Uplink</TD>
+	<TD>Frequencies List. You can also type your own value. Existing ones are taken from <B>notes files</B>, please check <B>NOTES/00000.TXT</B> for more details.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Driver</TD>
+	<TD>List of available drivers. New drivers can be added by editing [Drivers] section of <B>Config\Setup.cfg</B> file. Example config line: MyDriver=d:\MyDriver.exe</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Run selected driver and start sending data (icon)</TD>
+	<TD>After pressing this button, Orbitron will try to run driver and starts sending tracking data. At the first time you will be asked for location of driver's EXE file.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Tracking object</TD>
+	<TD>Choose object to track.</TD>
+</TR>
+<TR>
+	<TD align=right width=25%>Lock active satellite (icon)</TD>
+	<TD>Orbitron normally sends data for the active satellite to the rotor/radio driver. The 'Lock Active Satellite' button ensures that this data-stream continues uninterrupted, even if another satellite is made active. When this button is released, the data changes to that for the now-active satellite.
+</TD>
+</TR>
+
+</table><BR>
+<B>NOTE:</B> You must have installed WiSP DDE Client or other driver to perform rotor/radio control. You can get WiSP DDE Client application, writen by Fernando Mederos, CX6DD from his web page: <A HREF="http://www.laboratoriomederos.com/CX6DD/wispdde/" target="_blank">www.laboratoriomederos.com/CX6DD/wispdde/</A>.<BR>
+Full source code for My DDE Client can be downloaded from: <A HREF="http://www.stoff.pl" target="_blank">www.stoff.pl</A>.<BR>
+When you are using WiSP DDE Client, you must run it first and setup your rotor/radio configuration, then you can close it and let Orbitron do all the rest. DDE conversation parameters will be configured automaticaly by Orbitron.<BR>
+<BR>
+
+<TABLE align=center width=90% border=0 cellspacing=0 cellpadding=0>
+<TR bgcolor=#990000><TD height=1 align=left valign=middle colspan="3">
+</td></tr><TR><TD height=17 width=33% align=left valign=bottom>
+<A HREF="setup.htm" class="wht">&lt;&lt;&lt;&nbsp;Setup</A>
+</td><TD width=34% align=center valign=bottom>
+<A HREF="cnt.htm" class="wht">Contents</A>
+</td><TD width=33% align=right valign=bottom>
+<A HREF="banner.htm" class="wht">Banner&nbsp;mode&nbsp;&gt;&gt;&gt;</A>
+</td></tr></TABLE><BR>
+
+</BODY>
+</HTML>

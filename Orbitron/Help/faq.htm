@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+   <meta NAME="Robots" CONTENT="NOINDEX,NOFOLLOW">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+   <META NAME="Author" CONTENT="Sebastian Stoff">
+   <TITLE>Help</TITLE>
+   <LINK REL=stylesheet HREF="style.css" TYPE="text/css">
+</HEAD>
+
+<BODY BGCOLOR=#000000 TEXT=#FFFFFF> 
+<BR><FONT style="font-size: 14">
+
+<FONT style="font-size: 24" color=#FFFF66>FAQ</FONT><BR><BR>
+Frequently Asked Questions.<BR><BR>
+
+<B><font color=#33FF33>I saw satellite pass yesterday at 20:00. Which satellite might it be?</font></B><BR>
+You can check it very easily using Orbitron. Please:<BR>
+<UL style="margin-bottom: 0px; margin-top: 0px">
+	<LI>click 'Load TLE' button and choose <B>VISUAL.TXT</B> file,
+	<LI>track all satellites by choosing <B>Track all</B> in satellite list's context menu,
+	<LI>switch to <B>Simulation mode</B> pressing Ctrl + End,
+	<LI>enter time of interest in EditBox on center of Main Panel,
+	<LI>set <B>jump interval</B> to 0.5 minutes using ComboBoxes bellow,
+	<LI>choose Radar viewport (Ctrl + 2),
+	<LI>scroll the time (Ctrl + -, Ctrl + +).
+</UL>
+Look at radar, watching illuminated satellites for their placements and directions. Situation should be clear, if not check also visual magnitude of object by clicking on it and look at Info panel.<BR><BR>
+
+<B><font color=#33FF33>I have a slow computer. What can I do to speed up the application?</font></B><BR>
+There are some things, you can do to make Orbitron faster:<BR>
+<UL style="margin-bottom: 0px; margin-top: 0px">
+	<LI>track only a few or one satellite,
+	<LI>unselect active satellite if you don't need it,
+	<LI>turn off world map <B>night shadow</B> and/or <B>terminator</B>,
+	<LI>don't use 1 second <B>refresh interval</B>.
+</UL><BR>
+
+<B><font color=#33FF33>NODAR, UTC, AOS. What the hell is it?</font></B><BR>
+See <A HREF="glossary.htm">glossary</A>.<BR><BR>
+
+<B><font color=#33FF33>I want to see TLE data for selected satellite. Is it possible?</font></B><BR>
+Yes, of course. Please choose <B>Sat/Orbit info</B> - bottom panel, then click right mouse button on satellite name. That's all!<BR><BR>
+
+<B><font color=#33FF33>Can you put 'Autoselect satellite after AOS' option?</font></B><BR>
+I think its a bad idea (I don't like pseudo-intelligent applications). Orbitron shows AOS notification in footer, you can press <B>Alt+~</B> to select notification context satellite. OBSOLETE: Orbitron 3.12 introduced "AOS Notification: Make satellite active" option (Setup/Extra)<BR><BR>
+
+<B><font color=#33FF33>I dont like to use decimal degrees!</font></B><BR>
+Please, go to the <B>General</B> tab in Setup and choose DMS output of Lon/Lat. You can enter your coordinates in DMS notation as is described <A HREF="screen.htm#bot_loc">here</A>.<BR><BR>
+
+<B><font color=#33FF33>After Orbitron 2.0 installation, my old configuration files don't work!</font></B><BR>
+Because of big changes in Orbitron 2.0, old configuration files are no longer compatible. Sorry...<BR><BR>
+
+<B><font color=#33FF33>Orbitron Screen Saver doesn't work when Orbitron is running, is it a bug?</font></B><BR>
+No. At first I allow to run one instance of my application, at second it could look bizarre to see "Orbitron on Orbitron", at third any screen saver is turned off when you are running Orbitron (there are some reasons for that).<BR><BR>
+
+<B><font color=#33FF33>TLE Updater doesn't work for me since I installed Service Pack 2 for Windows XP, why?</font></B><BR>
+WinXP SP2 can block Internet access for Orbitorn as default. So, please go to the Windows Control Panel, then choose Firewall icon and in "Exceptions" panel you can add Orbitron application. Now Orbitron is allowed to get data from Internet...<BR><BR>
+
+<TABLE align=center width=90% border=0 cellspacing=0 cellpadding=0>
+<TR bgcolor=#990000><TD height=1 align=left valign=middle colspan="3">
+</td></tr><TR><TD height=17 width=33% align=left valign=bottom>
+<A HREF="command.htm" class="wht">&lt;&lt;&lt;&nbsp;Command&nbsp;line</A>
+</td><TD width=34% align=center valign=bottom>
+<A HREF="cnt.htm" class="wht">Contents</A>
+</td><TD width=33% align=right valign=bottom>
+<A HREF="tips.htm" class="wht">Tips &amp; tricks&nbsp;&gt;&gt;&gt;</A>
+</td></tr></TABLE><BR>
+
+</BODY>
+</HTML>

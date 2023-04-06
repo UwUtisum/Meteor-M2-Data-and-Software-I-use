@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+   <meta NAME="Robots" CONTENT="NOINDEX,NOFOLLOW">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+   <META NAME="Author" CONTENT="Sebastian Stoff">
+   <TITLE>Help</TITLE>
+   <LINK REL=stylesheet HREF="style.css" TYPE="text/css">
+</HEAD>
+
+<BODY BGCOLOR=#000000 TEXT=#FFFFFF> 
+<BR><FONT style="font-size: 14">
+
+<FONT style="font-size: 24" color=#FFFF66>Setup</FONT><BR><BR>
+Setup, called by the button on Main Panel or <B>Alt+F5</B> shortcut, gives you access to additional program functions and settings. During setup session, you can always click the <B>Help</B> button, <B>Apply</B> changes, or <B>Cancel</B> session. Note that <B>NTP servers list</B> and <B>TLE update groups</B> are saved immediately, selected <B>World map preset</B> is saved when you switch to other preset.<BR><BR>
+Setup groups are described below...<BR><BR>
+
+<A NAME="gen"></A>
+<DL><FONT style="font-size: 18" color=#33FF33>General</FONT><BR>
+<dt><B>RA/Decl output</B>
+<dd>Style of degrees output for right ascension and declination (Decimal degrees or DMS for declination and HMS for RA).
+<dt><B>Lon/Lat output</B>
+<dd>Style of degrees output for longitude and latitude (Decimal degrees or DMS).
+<dt><B>Local time</B>
+<dd>UTC offset configuration (you can set it manually or use autodetect option)
+<dt><B>Date</B>
+<dd>Custom date format is available. Orbitron can display date e.g. as '01.30.2003' rather than '2003-01-30', so please choose date format and separator according to your preference.<BR><BR>
+
+<dt><B>Check for new version and messages</B>
+<dd>Orbitron can check information about new version and messages. (Internet connection required). Application puts it on start and display Message Board window if any news is detected.
+<dt><B>TLE update confirmation</B>
+<dd>If this option is unchecked and Orbitron detects that TLE is expired, application tries to update TLE files without any questions. If no <B>TLE updater</B> group is marked for autoupdate, then Orbitron will show TLE Updater.
+<dt><B>Save profile on exit</B>
+<dd>Option groups like <B>General</B> and <B>Extra</B> are saved always when Orbitron is closing. But there are profile-dependent options containing: <B>Location, Satellites (loaded/tracked/active), Visualisation, TLE Updater, AOS notification, Prediction Setup</B> that can be saved also. If this option is checked, Orbitron will look the same after it is run as before the last closing.
+<dt><B>Exit confirmation</B>
+<dd>Display exit confirmation dialog before application closes.
+</DL>
+
+<A NAME="map"></A>
+<FONT style="font-size: 18" color=#33FF33>World map</FONT><BR>
+World map tuning. Note that you can use your own map and satellite images by placing it in <B>Data\</B> directory and naming: <B>World-*.bmp</B> and <B>Sat-*.bmp</B>. Note that map names including string "<B>standard</B>" are recognized as gray-scale images (for land/sea recolorize).
+<DL>
+<dt><B>Presets</B>
+<dd>You can add, edit and remove presets which store map configurations.
+<dt><B>Map image</B>
+<dd>Selecting <B>Standard</B> map gives you a chance to customize land and sea colors.
+<dt><B>Sat icons</B>
+<dd>Choose satellite icon you like.
+<dt><B>Colors</B>
+<dd>You can change color for each map element.
+</DL>
+
+<A NAME="tle"></A>
+<FONT style="font-size: 18" color=#33FF33>TLE Updater</FONT><BR>
+TLE Updater allows you to update your TLE data using Internet. It's fully configurable. You are allowed to download TLE/TXT/ZIP files via HTTP connection. Downloaded files are written/extracted to your <B>TLE\</B> directory, existing ones are overwritten. If you dowload a ZIP file, it will be decompressed. After update, setup will reload the TLE data.<BR><BR>
+
+<A NAME="ntp"></A>
+<FONT style="font-size: 18" color=#33FF33>Time synch</FONT><BR>
+Time synchronization via <B>NTP</B>. If you have an Internet connection, you can synchronize your PC clock very easily. Just select NTP server and click the <B>Synchronize</B> icon. You can also click the <B>Check</B> icon to learn time difference and leave your time as is.
+<DL>
+<dt><B>Synchronize PC clock when Orbitron starts</B>
+<dd>If checked Orbitron will perform clock synchronization each time it starts.
+<dt><B>Ignore received time when difference is greater than 1 year</B>
+<dd>It protects time synchronization with nonsense data.
+</DL>
+
+<A NAME="mis"></A>
+<FONT style="font-size: 18" color=#33FF33>Miscellaneous</FONT><BR>
+Miscellaneous options. 
+<DL>
+<dt><B>Radar viewport</B>
+<dd>You can specify radar background image. You can turn it to <B>* Blank</B> or add your own files named <B>Bckg-*.jpg</B> to <B>Data\</B> directory. <B>Radar viewport rotation</B> option can be useful when e.g. you are looking through the window at the southern sky, then you can set it to 180 deg. to see your sky part on upper radar region.
+<dt><B>AOS notiffication</B>
+<dd>Define Orbitron behaviour when AOS (Acquisition of Signal, Appear on Sky) is detected. You can set satellite AOS elevation limit, displaying notice and sound to be played. 
+<dt><B>User working directory</B>
+<dd>If you use <B>Windows 2000/XP</B>, your user account may not have privileges for writing to <B>Program Files</B> directory when Orbitron is installed. In that situation you can't store there your setup/notes files there. If you set <B>user working directory</B> to a place in <B>Your documents directory</B> or somewere else you can write to, this problem disappears. When you click Browse button, please choose location when Orbitron creates your working directory named <B>Orbitron</B>.
+<dt><B>Language</B>
+<dd>What can I say. Just select your language. If it isn't on the list, then check <A HREF="http://www.stoff.pl">www.stoff.pl</A>, if it isn't there, you can translate Orbitron yourself. Just contact me.
+<dt><B>Personal TLE directory</B>
+<dd>It's an extension to the option above. If checked, Orbitron will use the TLE directory located in your working directory; if not, the <B>main TLE directory</B> in <B>Program Files\Orbitron\TLE</B> and you may not be allowed to use TLE Updater.</DL><BR>
+
+<A NAME="ext"></A>
+<FONT style="font-size: 18" color=#33FF33>Extra</FONT><BR>
+You can find advanced and experimental options here. Just play with it and learn about it...<BR><BR>
+<DL>
+<dt><B>Save extended map settings</B>
+<dd>If checked, map shift, zoom (e.g. Europe view) and state of option 'Active satellite center' are saved to profile with other parameters. If not, map is saved with zoom 100% and point (lon 180 W, lat 90 N) in left upper corner of window.
+<dt><B>Save extended interface settings</B>
+<dd>Please check this option to save Orbitron interface settings to profile. This option lets you save: active bottom and right panels, window position and size, night life state, and a few other settings...
+<dt><B>Full interactive mode for viewport</B>
+<dd>If checked, satellites and other vierwport content are displayed when viewport is moved/rotated by user.
+<dt><B>Automatic 'Sat on track' position</B>
+<dd>If checked, satellite positon on track (begin/middle/end) is switched to middle when you 
+go to Simulation mode by clicking on track.
+<dt><B>Default mouse cursor</B>
+<dd>Checked: Orbitron will use only standard mouse cursor (it fixes a problem with the cursor on some graphics cards).<BR>
+Unchecked (default): Orbitron will use mouse cursors depending on context.
+<dt><B>Hide '?' tab from bottom panels</B>
+<dd>There is a '?' tab in the main window's bottom panels, please check here to hide it.
+<dt><B>High resolution ground/sky track</B>
+<dd>If checked, ground/sky track is drawn with higher resolution - contains more points. Track line is more soft with this option turned on. It's especially usable for satellites on high eccentric orbits such as Molniya.
+<dt><B>Use default direction letters (N E S W)</B>
+<dd>With this option, you can ignore direction letters provided in translation. So, it allows you to use NESW regardless of chosen translation.
+<dt><B>Image exporter / auto screen shot</B>
+<dd>Screen shot of viewport can be taken every time viewport is recalculated. It will be stored in <B>Orbitron\Output\export_v.jpg</B> (or export_v.bmp) file. This option can be used for cooperation with other software such as UISS.
+<dt><B>JPEG format for screen shots</B>
+<dd>If checked, all pictures made by Orbitron will be saved in JPEG format, otherwise, in BMP format.
+
+<dt><B>Show application hints</B>
+<dd>Determines whether Help Hints are enabled or disabled for the entire application.
+<dt><B>Moon rotation for southern hemisphere</B>
+<dd>If checked, moon image will be rotated when you select a location on the Earth's southern hemisphere.
+<dt><B>Degree symbol for Big5 charset</B>
+<dd>If you are using Big5 charset on your machine, turn on this option to make degree symbol displayed correct.
+<dt><B>Printer: Don't use highlight</B>
+<dd>Printer output without highlight (some lines of printout can be highlighted).
+<dt><B>Printer: Use raw output</B>
+<dd>Sets printer output for text printers (plain text).
+<dt><B>ScrSaver: Turn back time if TLE expired</B>
+<dd>Some users are using Orbitron only as a screen saver, then they don't update TLE data for months. 
+It's protection for calculation on the old TLE. If checked and user loads expired TLE, calculation time is turned back to the moment when the TLE was generated.
+<dt><B>Autostart Rotor/Radio driver</B>
+<dd>If checked, Orbitron, when it starts will launch the last-used driver.
+<dt><B>AOS Notification: Make satellite active</B>
+<dd>Every satellite, after AOS notification, can be automatically marked as active when this option is checked.
+</DL><BR>
+
+<TABLE align=center width=90% border=0 cellspacing=0 cellpadding=0>
+<TR bgcolor=#990000><TD height=1 align=left valign=middle colspan="3">
+</td></tr><TR><TD height=17 width=33% align=left valign=bottom>
+<A HREF="keys.htm" class="wht">&lt;&lt;&lt;&nbsp;Keyboard</A>
+</td><TD width=34% align=center valign=bottom>
+<A HREF="cnt.htm" class="wht">Contents</A>
+</td><TD width=33% align=right valign=bottom>
+<A HREF="screen.htm" class="wht">Screen&nbsp;elements&nbsp;&gt;&gt;&gt;</A>
+</td></tr></TABLE><BR>
+
+</BODY>
+</HTML>

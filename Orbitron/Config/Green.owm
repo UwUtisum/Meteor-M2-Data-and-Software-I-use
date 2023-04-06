@@ -1,0 +1,18 @@
+[Main]
+ReadOnly=1
+[Bitmaps]
+Map=Standard
+Ico=Ball (big)
+[Colors]
+Lnd=24B541
+Sea=00801A
+Ilu_Sat=22EEFF
+Ecl_Sat=3C3CE3
+Sel_Sat=FFFFFF
+Foo_Line=00FF00
+Te1_Line=FFFFFF
+Te2_Line=0303FC
+Gr1_Line=43FF04
+Gr2_Line=11C165
+Text=FFFFFF
+TextShadow=444444
