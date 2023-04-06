@@ -7,6 +7,9 @@ this is a repo containing all the software and data i have collected from the Ru
 
 ![Screenshot 2023-04-06 195852](https://user-images.githubusercontent.com/35628281/230470664-9bfc0365-b952-4231-818d-42c11c0d0667.png)
 
+<hr>
+# image of Meteor M2
+![3859_900](https://user-images.githubusercontent.com/35628281/230502498-c61d4fff-b2fe-455b-bc6a-9588d962404f.jpg)
 
 on the 24th of December 2022 Meteor M-2 was taken offline for good due to multiple issues with its LRPT transmitter
 more can be found here https://www.rtl-sdr.com/the-meteor-m2-lrpt-weather-satellite-has-failed/
