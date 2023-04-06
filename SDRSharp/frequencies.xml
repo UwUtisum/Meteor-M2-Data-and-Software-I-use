@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ArrayOfMemoryEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MemoryEntry>
+    <IsFavourite>true</IsFavourite>
+    <Name>ATIS Aberdeen</Name>
+    <GroupName>Misc</GroupName>
+    <Frequency>114300000</Frequency>
+    <DetectorType>WFM</DetectorType>
+    <Shift>0</Shift>
+    <FilterBandwidth>120000</FilterBandwidth>
+  </MemoryEntry>
+  <MemoryEntry>
+    <IsFavourite>true</IsFavourite>
+    <Name>Meteor M 137.1</Name>
+    <GroupName>Meteor</GroupName>
+    <Frequency>137100000</Frequency>
+    <DetectorType>WFM</DetectorType>
+    <Shift>0</Shift>
+    <FilterBandwidth>120000</FilterBandwidth>
+  </MemoryEntry>
+  <MemoryEntry>
+    <IsFavourite>false</IsFavourite>
+    <Name>Meteor M 137.9</Name>
+    <GroupName>Meteor</GroupName>
+    <Frequency>137900000</Frequency>
+    <DetectorType>WFM</DetectorType>
+    <Shift>0</Shift>
+    <FilterBandwidth>120000</FilterBandwidth>
+  </MemoryEntry>
+</ArrayOfMemoryEntry>

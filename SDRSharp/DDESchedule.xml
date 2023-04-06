@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<ArrayOfSchedulerEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SchedulerEntry>
+    <SatName>METEOR-M_2</SatName>
+    <OnCommands>
+      <string>radio_Start</string>
+      <string>radio_modulation_type&lt;wfm&gt;</string>
+      <string>radio_center_frequency_Hz&lt;137100000&gt;</string>
+      <string>radio_frequency_Hz&lt;137100000&gt;</string>
+      <string>radio_bandwidth_Hz&lt;120000&gt;</string>
+      <string>PSK_set_SymbolRate&lt;72000&gt;</string>
+      <string>M2_decoder_init_Line&lt;rgb=125.jpg&gt;</string>
+      <string>QPSK_demodulator_Start</string>
+      <string>send_tracking_frequency_On</string>
+      <string>start_programm_Path&lt;C:\Meteor\MeteorGIS\MeteorGIS.exe&gt;</string>
+      <string />
+      <string />
+      <string />
+    </OnCommands>
+    <OffComands>
+      <string>send_Tracking_Frequency_Off</string>
+      <string>QPSK_demodulator_Stop</string>
+      <string>radio_Stop</string>
+      <string />
+    </OffComands>
+  </SchedulerEntry>
+  <SchedulerEntry>
+    <SatName>NOAA_15</SatName>
+    <OnCommands>
+      <string>radio_Start</string>
+      <string>radio_modulation_type&lt;WFM&gt;</string>
+      <string>radio_bandwidth_Hz&lt;40000&gt;</string>
+      <string>radio_center_frequency_Hz&lt;137620000&gt;</string>
+      <string>radio_frequency_Hz&lt;137620000&gt;</string>
+      <string>radio_tracking_frequency_On</string>
+      <string />
+    </OnCommands>
+    <OffComands>
+      <string>radio_tracking_frequency_Off</string>
+      <string>radio_Stop</string>
+      <string />
+    </OffComands>
+  </SchedulerEntry>
+  <SchedulerEntry>
+    <SatName>NOAA_18</SatName>
+    <OnCommands>
+      <string>radio_Start</string>
+      <string>radio_modulation_type&lt;WFM&gt;</string>
+      <string>radio_bandwidth_Hz&lt;40000&gt;</string>
+      <string>radio_center_frequency_Hz&lt;137912500&gt;</string>
+      <string>radio_frequency_Hz&lt;137912500&gt;</string>
+      <string>radio_tracking_frequency_On</string>
+      <string />
+    </OnCommands>
+    <OffComands>
+      <string>radio_tracking_frequency_Off</string>
+      <string>radio_Stop</string>
+      <string />
+    </OffComands>
+  </SchedulerEntry>
+  <SchedulerEntry>
+    <SatName>NOAA_19</SatName>
+    <OnCommands>
+      <string>radio_Start</string>
+      <string>radio_modulation_type&lt;WFM&gt;</string>
+      <string>radio_bandwidth_Hz&lt;40000&gt;</string>
+      <string>radio_center_frequency_Hz&lt;137100000&gt;</string>
+      <string>radio_frequency_Hz&lt;137100000&gt;</string>
+      <string>radio_tracking_frequency_On</string>
+      <string />
+    </OnCommands>
+    <OffComands>
+      <string>radio_tracking_frequency_Off</string>
+      <string>radio_Stop</string>
+      <string />
+    </OffComands>
+  </SchedulerEntry>
+</ArrayOfSchedulerEntry>
