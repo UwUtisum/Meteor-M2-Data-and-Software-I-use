@@ -15,3 +15,6 @@ This is a repo containing all the software and data i have collected from the Ru
 
 On the 24th of December 2022 Meteor M-2 was taken offline for good due to multiple issues with its LRPT transmitter.
 More information can be found here: https://www.rtl-sdr.com/the-meteor-m2-lrpt-weather-satellite-has-failed/
+
+# August 2023 Update:
+Meteor M-2's replacement meteor M-3 has launched and is fully operational as of the 18th of augast 2023 i will update soon with images of my passes from the new sat
